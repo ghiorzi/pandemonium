@@ -7,6 +7,6 @@ namespace Pandemonium.Extensions
         /// <summary>
         /// Returns true if value is a letter, otherwise returns false
         /// </summary> 
-        public static Boolean Letter(this Char @this) => Char.IsLetter(@this);
+        public static bool Letter(this char @this) => Char.IsLetter(@this);
     }
 }
