@@ -5,7 +5,7 @@ namespace Pandemonium.Extensions
     public static partial class Methods
     {
         /// <summary>
-        /// Inserts the value if it is does not exist, otherwise updates it
+        /// Inserts the value if it does not exist, otherwise update it
         /// </summary>
         public static TValue Upsert<TKey, TValue>(this IDictionary<TKey, TValue> @this, TKey key, TValue value)
         {

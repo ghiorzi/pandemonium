@@ -22,7 +22,7 @@ namespace Pandemonium.Test.Extensions.IDictionary
         }
 
         [Fact]
-        public void Should_Update_Given_An_Existin_Key()
+        public void Should_Update_Given_An_Existing_Key()
         {
             var dictionary = new Dictionary<int, string>()
             {
