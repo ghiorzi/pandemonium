@@ -18,7 +18,7 @@ namespace Pandemonium.Test.Extensions.Number
         }
 
         [Fact]
-        public void Should_Be_False_Given_A_Non_Default_Value() 
+        public void Should_Be_False_Given_Negative_Number() 
         {
             Assert.False(((sbyte) -1).Positive());
             Assert.False(((short) -1).Positive());

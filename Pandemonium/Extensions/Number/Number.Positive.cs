@@ -1,5 +1,3 @@
-using System.Collections.Generic;
-
 namespace Pandemonium.Extensions
 {
     public static partial class Methods
