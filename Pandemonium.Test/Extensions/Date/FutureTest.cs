@@ -18,7 +18,7 @@ namespace Pandemonium.Test.Extensions.Date
         }
 
         [Fact]
-        public void Should_Not_Be_Between_10_January_12_January_2020()
+        public void Should_Not_Be_In_Future_Given_Present_Date()
         {
             var date = DateTime.Now;
 
