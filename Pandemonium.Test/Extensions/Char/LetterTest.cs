@@ -32,9 +32,11 @@ namespace Pandemonium.Test.Extensions.Char
         [InlineData('w')]
         [InlineData('y')]
         [InlineData('z')]
-        public void Should_Be_True_Given_A_Letter(char letter) => Assert.True(letter.Letter());
+        public void Should_Be_True_Given_A_Letter(char letter) 
+            => Assert.True(letter.Letter());
 
         [Fact]
-        public void Should_Be_False_Given_A_Number() => Assert.False('1'.Letter());
+        public void Should_Be_False_Given_A_Number() 
+            => Assert.False('1'.Letter());
     }
 }

@@ -15,6 +15,7 @@ namespace Pandemonium.Test.Extensions.Object
         }
 
         [Fact]
-        public void Should_Be_False_Given_A_Non_Nullable_Value() => Assert.False(DateTime.Now.Nullable());
+        public void Should_Be_False_Given_A_Non_Nullable_Value() 
+            => Assert.False(DateTime.Now.Nullable());
     }
 }

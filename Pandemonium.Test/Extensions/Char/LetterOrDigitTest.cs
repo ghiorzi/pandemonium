@@ -32,7 +32,8 @@ namespace Pandemonium.Test.Extensions.Char
         [InlineData('w')]
         [InlineData('y')]
         [InlineData('z')]
-        public void Should_Be_True_Given_A_Letter(char letter) => Assert.True(letter.LetterOrDigit());
+        public void Should_Be_True_Given_A_Letter(char letter) 
+            => Assert.True(letter.LetterOrDigit());
 
         [Theory]
         [InlineData('0')]
@@ -45,9 +46,11 @@ namespace Pandemonium.Test.Extensions.Char
         [InlineData('7')]
         [InlineData('8')]
         [InlineData('9')]
-        public void Should_Be_True_Given_A_Digit(char digit) => Assert.True(digit.LetterOrDigit());
+        public void Should_Be_True_Given_A_Digit(char digit)
+            => Assert.True(digit.LetterOrDigit());
 
         [Fact]
-        public void Should_Be_False_Given_A_Operator() => Assert.False('+'.Letter());
+        public void Should_Be_False_Given_A_Operator() 
+            => Assert.False('+'.Letter());
     }
 }

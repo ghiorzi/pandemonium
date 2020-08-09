@@ -14,9 +14,11 @@ namespace Pandemonium.Test.Extensions.Char
         [InlineData('.')]
         [InlineData('?')]
         [InlineData(';')]
-        public void Should_Be_True_Given_A_Punctuation(char punctuation) => Assert.True(punctuation.Punctuation());
+        public void Should_Be_True_Given_A_Punctuation(char punctuation) 
+            => Assert.True(punctuation.Punctuation());
 
         [Fact]
-        public void Should_Be_False_Given_A_Letter() => Assert.False('a'.Punctuation());
+        public void Should_Be_False_Given_A_Letter() 
+            => Assert.False('a'.Punctuation());
     }
 }

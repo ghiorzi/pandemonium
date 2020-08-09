@@ -16,7 +16,7 @@ namespace Pandemonium.Test.Extensions.Number
         }
 
         [Fact]
-        public void Should_Be_False_Given_May_As_Month() 
+        public void Should_Be_False_Given_July_As_Month() 
         {
             DateTime date = 28.August(2020);
 

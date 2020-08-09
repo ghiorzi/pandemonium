@@ -16,9 +16,11 @@ namespace Pandemonium.Test.Extensions.Char
         [InlineData('7')]
         [InlineData('8')]
         [InlineData('9')]
-        public void Should_Be_True_Given_A_Digit(char digit) => Assert.True(digit.Digit());
+        public void Should_Be_True_Given_A_Digit(char digit) 
+            => Assert.True(digit.Digit());
 
         [Fact]
-        public void Should_Be_False_Given_A_Letter() => Assert.False('a'.Digit());
+        public void Should_Be_False_Given_A_Letter() 
+            => Assert.False('a'.Digit());
     }
 }

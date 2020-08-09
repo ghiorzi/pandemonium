@@ -14,6 +14,7 @@ namespace Pandemonium.Test.Extensions.Object
         }
 
         [Fact]
-        public void Should_Be_True_Given_A_Non_Null_Value() => Assert.True(1.NotNull());
+        public void Should_Be_True_Given_A_Non_Null_Value() 
+            => Assert.True(1.NotNull());
     }
 }
