@@ -5,24 +5,24 @@ using System.Linq;
 
 namespace Pandemonium.Test.Extensions.IEnumerables
 {
-    public class NoneTest
+    public class NotEmptyTest
     {
         [Fact]
-        public void Should_Not_Match_Given_Predicate() 
+        public void Should_Not_Be_Empty() 
         {
             IEnumerable<int> values = Enumerable.Range(1, 10);
 
-            bool result = values.None(number => number > 20);
+            bool result = values.NotEmpty();
 
             Assert.True(result);
         }
 
         [Fact]
-        public void Should_Match_Given_Predicate() 
+        public void Should_Be_Empty() 
         {
-            IEnumerable<int> values = Enumerable.Range(1, 10);
+            IEnumerable<int> values = new List<int>();
 
-            bool result = values.None(number => number > 9);
+            bool result = values.NotEmpty();
 
             Assert.False(result);
         }
