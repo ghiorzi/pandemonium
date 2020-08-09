@@ -13,6 +13,11 @@
 #### .NET CLI    
     dotnet add package Pandemonium
 
+## Usage
+```csharp
+using Pandemonium; // use the namespace
+```
+
 ## Get rid of "not"
 
 ```csharp
@@ -27,6 +32,8 @@ var names = new List<string>()
 // to None
 names.None(name => name == "Yui");
 
+bool value = false;
+
 // from !
 if (!value)
 // to
@@ -39,8 +46,8 @@ if (value.False())
 int number = 7;
 
 number
-      .GreaterThan(4)
-      .Then(() => Console.WriteLine($"{number} is greater than 4")) // if
+      .GreaterThanOrEqualTo(4)
+      .Then(() => Console.WriteLine($"{number} is greater than or equal to 4")) // if
       .Otherwise(() => Console.WriteLine($"{number} is less than 4")); // else
 
 string text = null;
@@ -83,4 +90,29 @@ TimeSpan.FromHours(2);
 TimeSpan.FromDays(7);
 // to
 7.Days();
+```
+
+## Use higher order functions to extract or remove values from string
+
+```csharp
+string numbers = "123 text".Where(value => value.Number()); // 123
+
+string letters = "123 text".Where(value => value.Letter()); // text
+
+// Predicate over replace
+"123 text".Remove(value => value.Letter() || value.Whitespace()); // 123
+```
+
+## Insert or update? Yes
+```csharp
+var characters = new Dictionary<string, int>()
+{
+    ["Sora"] = 18,
+    ["Shiro"] = 11
+};
+
+// Update
+characters.Upsert("Shiro", 12);
+// Insert
+characters.Upsert("Stephanie", 18);
 ```
