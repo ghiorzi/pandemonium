@@ -1,11 +1,11 @@
 ﻿using System;
 
-namespace Pandemonium.Extensions
+namespace Pandemonium
 {
     public static partial class Methods
     {
         /// <summary>
-        /// Runs the action when the value is false
+        /// It runs the action when the value is false
         /// </summary>
         public static void Otherwise(this bool @this, Action action)
         {
@@ -14,7 +14,7 @@ namespace Pandemonium.Extensions
         }
 
         /// <summary>
-        /// Runs the function when the value is false
+        /// It runs the function when the value is false
         /// </summary>
         public static T Otherwise<T>(this bool @this, Func<T> function)
         {

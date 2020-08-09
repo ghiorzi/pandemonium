@@ -1,10 +1,8 @@
-namespace Pandemonium.Extensions
+namespace Pandemonium
 {
     public static partial class Methods
     {
-        /// <summary>
-        /// Returns true if value is not null, otherwise returns false
-        /// </summary>
-        public static bool NotNull(this object @this) => @this != null;
+        public static bool NotNull(this object @this) 
+            => @this != null;
     }
 }

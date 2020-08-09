@@ -1,11 +1,11 @@
 using System;
 
-namespace Pandemonium.Extensions
+namespace Pandemonium
 {
     public static partial class Methods
     {
         /// <summary>
-        /// Subtracts @days
+        /// It subtracts @days
         /// </summary>
         public static DateTime Subtract(this DateTime @this, int days) 
             => @this.AddDays(days * -1);

@@ -1,11 +1,11 @@
 using System;
 
-namespace Pandemonium.Extensions
+namespace Pandemonium
 {
     public static partial class Methods
     {
         /// <summary>
-        /// Returns true if @this is on weekend.
+        /// It returns true if @this is on weekend
         /// </summary>
         public static bool OnWeekend(this DateTime @this)
         {

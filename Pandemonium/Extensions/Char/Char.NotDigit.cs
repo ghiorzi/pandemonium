@@ -1,12 +1,13 @@
 using System;
 
-namespace Pandemonium.Extensions
+namespace Pandemonium
 {
     public static partial class Methods
     {
         /// <summary>
-        /// Returns true if value is not a digit, otherwise returns false
+        /// It returns true if value is not a digit, otherwise returns false
         /// </summary> 
-        public static bool NotDigit(this char @this) => !Char.IsDigit(@this);
+        public static bool NotDigit(this char @this) 
+            => !Char.IsDigit(@this);
     }
 }

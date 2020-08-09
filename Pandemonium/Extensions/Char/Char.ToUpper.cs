@@ -1,12 +1,13 @@
 using System;
 
-namespace Pandemonium.Extensions
+namespace Pandemonium
 {
     public static partial class Methods
     {
         /// <summary>
-        /// Transforms a character to uppercase
+        /// It transforms a character to uppercase
         /// </summary> 
-        public static char ToUpper(this char @this) => Char.ToUpper(@this);
+        public static char ToUpper(this char @this) 
+            => Char.ToUpper(@this);
     }
 }

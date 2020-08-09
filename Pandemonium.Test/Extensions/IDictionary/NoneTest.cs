@@ -1,5 +1,5 @@
 using Xunit;
-using Pandemonium.Extensions;
+using Pandemonium;
 using System.Collections.Generic;
 
 namespace Pandemonium.Test.Extensions.IDictionary

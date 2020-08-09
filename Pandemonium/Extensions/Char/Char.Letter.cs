@@ -1,12 +1,13 @@
 using System;
 
-namespace Pandemonium.Extensions
+namespace Pandemonium
 {
     public static partial class Methods
     {
         /// <summary>
-        /// Returns true if value is a letter, otherwise returns false
+        /// It returns true if value is a letter, otherwise returns false
         /// </summary> 
-        public static bool Letter(this char @this) => Char.IsLetter(@this);
+        public static bool Letter(this char @this) 
+            => Char.IsLetter(@this);
     }
 }

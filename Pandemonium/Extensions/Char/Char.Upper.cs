@@ -1,12 +1,13 @@
 using System;
 
-namespace Pandemonium.Extensions
+namespace Pandemonium
 {
     public static partial class Methods
     {
         /// <summary>
-        /// Returns true if value is in uppercase, otherwise returns false
+        /// It returns true if value is in uppercase, otherwise returns false
         /// </summary> 
-        public static bool Upper(this char @this) => Char.IsUpper(@this);
+        public static bool Upper(this char @this) 
+            => Char.IsUpper(@this);
     }
 }

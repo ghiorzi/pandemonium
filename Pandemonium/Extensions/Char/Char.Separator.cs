@@ -1,12 +1,13 @@
 using System;
 
-namespace Pandemonium.Extensions
+namespace Pandemonium
 {
     public static partial class Methods
     {
         /// <summary>
-        /// Returns true if value is a separator, otherwise returns false
+        /// It returns true if value is a separator, otherwise returns false
         /// </summary> 
-        public static bool Separator(this char @this) => Char.IsSeparator(@this);
+        public static bool Separator(this char @this) 
+            => Char.IsSeparator(@this);
     }
 }

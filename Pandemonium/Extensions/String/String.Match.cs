@@ -1,6 +1,6 @@
 using System.Text.RegularExpressions;
 
-namespace Pandemonium.Extensions
+namespace Pandemonium
 {
     public static partial class Methods
     {

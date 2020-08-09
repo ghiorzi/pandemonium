@@ -1,6 +1,4 @@
-using System;
-
-namespace Pandemonium.Extensions
+namespace Pandemonium
 {
     public static partial class Methods
     {

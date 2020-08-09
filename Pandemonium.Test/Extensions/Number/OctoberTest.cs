@@ -1,7 +1,7 @@
 
 using Xunit;
 using System;
-using Pandemonium.Extensions;
+using Pandemonium;
 
 namespace Pandemonium.Test.Extensions.Number
 {

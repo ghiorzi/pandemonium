@@ -1,9 +1,10 @@
-﻿namespace Pandemonium.Extensions
+﻿namespace Pandemonium
 {
     public static partial class Methods
     {
         /// <summary>
-        /// Inverts the value (true => false, false => true)
-        public static bool Not(this bool @this) => !@this;
+        /// It inverts the value (true => false, false => true)
+        public static bool Not(this bool @this) 
+            => !@this;
     }
 }

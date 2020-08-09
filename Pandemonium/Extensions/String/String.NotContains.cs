@@ -1,7 +1,6 @@
 using System;
-using System.Linq;
 
-namespace Pandemonium.Extensions
+namespace Pandemonium
 {
     public static partial class Methods
     {

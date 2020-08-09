@@ -1,11 +1,11 @@
 ﻿using System;
 
-namespace Pandemonium.Extensions
+namespace Pandemonium
 {
     public static partial class Methods
     {
         /// <summary>
-        /// Runs the action if value is true
+        /// It runs the action if value is true
         /// </summary>
         public static bool Then(this bool @this, Action action)
         {
@@ -16,7 +16,7 @@ namespace Pandemonium.Extensions
         }
 
         /// <summary>
-        /// Runs the function if value is true
+        /// It runs the function if value is true
         /// </summary>
         public static T Then<T>(this bool @this, Func<T> function)
         {

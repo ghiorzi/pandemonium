@@ -1,5 +1,5 @@
 using Xunit;
-using Pandemonium.Extensions;
+using Pandemonium;
 
 namespace Pandemonium.Test.Extensions.Strings
 {

@@ -1,5 +1,5 @@
 using Xunit;
-using Pandemonium.Extensions;
+using Pandemonium;
 using System;
 using System.Collections.Generic;
 

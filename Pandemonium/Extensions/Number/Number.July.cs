@@ -1,7 +1,7 @@
 using System;
 using System.Globalization;
 
-namespace Pandemonium.Extensions
+namespace Pandemonium
 {
     public static partial class Methods
     {

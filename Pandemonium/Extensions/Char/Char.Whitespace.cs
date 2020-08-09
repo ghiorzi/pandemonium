@@ -1,12 +1,13 @@
 using System;
 
-namespace Pandemonium.Extensions
+namespace Pandemonium
 {
     public static partial class Methods
     {
         /// <summary>
-        /// Returns true if value is a whitespace, otherwise returns false
+        /// It returns true if value is a whitespace, otherwise returns false
         /// </summary> 
-        public static bool Whitespace(this char @this) => Char.IsWhiteSpace(@this);
+        public static bool Whitespace(this char @this) 
+            => Char.IsWhiteSpace(@this);
     }
 }

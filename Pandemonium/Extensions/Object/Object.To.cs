@@ -1,11 +1,11 @@
 using System;
 
-namespace Pandemonium.Extensions
+namespace Pandemonium
 {
     public static partial class Methods
     {
         /// <summary>
-        /// Casts value to T type
+        /// It casts value to T
         /// </summary>
         public static T To<T>(this object @this)
         {

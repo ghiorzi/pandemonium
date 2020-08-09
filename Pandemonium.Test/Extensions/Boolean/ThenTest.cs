@@ -1,5 +1,5 @@
 ﻿using Xunit;
-using Pandemonium.Extensions;
+using Pandemonium;
 using System;
 
 namespace Pandemonium.Test.Extensions.Boolean

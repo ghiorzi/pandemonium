@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace Pandemonium.Extensions
+namespace Pandemonium
 {
     public static partial class Methods
     {

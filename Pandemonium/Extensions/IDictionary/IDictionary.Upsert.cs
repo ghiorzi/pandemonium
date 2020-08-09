@@ -1,11 +1,11 @@
 using System.Collections.Generic;
 
-namespace Pandemonium.Extensions
+namespace Pandemonium
 {
     public static partial class Methods
     {
         /// <summary>
-        /// Inserts the value if it does not exist, otherwise update it
+        /// It inserts the value if it does not exist, otherwise update it
         /// </summary>
         public static TValue Upsert<TKey, TValue>(this IDictionary<TKey, TValue> @this, TKey key, TValue value)
         {

@@ -1,12 +1,13 @@
 using System;
 
-namespace Pandemonium.Extensions
+namespace Pandemonium
 {
     public static partial class Methods
     {
         /// <summary>
-        /// Returns true if value is not in lowercase, otherwise returns false
+        /// It returns true if value is not in lowercase, otherwise returns false
         /// </summary> 
-        public static bool NotLower(this char @this) => !Char.IsLower(@this);
+        public static bool NotLower(this char @this) 
+            => !Char.IsLower(@this);
     }
 }

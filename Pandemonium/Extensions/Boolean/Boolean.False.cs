@@ -1,10 +1,11 @@
-﻿namespace Pandemonium.Extensions
+﻿namespace Pandemonium
 {
     public static partial class Methods
     {
         /// <summary>
-        ///  Returns true if value is false
+        /// It returns true if value is false
         /// </summary>
-        public static bool False(this bool @this) => !@this;
+        public static bool False(this bool @this) 
+            => !@this;
     }
 }

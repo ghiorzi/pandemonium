@@ -1,10 +1,11 @@
-﻿namespace Pandemonium.Extensions
+﻿namespace Pandemonium
 {
     public static partial class Methods
     {
         /// <summary>
-        /// Return true when at least one value is true
+        /// It return true when at least one value is true
         /// </summary>
-        public static bool Or(this bool @this, bool value) => @this || value;
+        public static bool Or(this bool @this, bool value)
+            => @this || value;
     }
 }
