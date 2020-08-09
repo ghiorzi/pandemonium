@@ -1,0 +1,33 @@
+using System;
+
+namespace Pandemonium.Extensions
+{
+    public static partial class Methods
+    {
+        public static bool Any(this string @this, params string[] values)
+        {
+            foreach (string value in values)
+            {
+                bool equals = @this.Equals(value);
+
+                if (equals)
+                    return true;
+            }
+
+            return false;
+        }
+
+        public static bool Any(this string @this, StringComparison comparison, params string[] values)
+        {
+            foreach (string value in values)
+            {
+                bool equals = @this.Equals(value, comparison);
+
+                if (equals)
+                    return true;
+            }
+
+            return false;
+        }
+    }
+}
