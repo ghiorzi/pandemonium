@@ -5,7 +5,7 @@ namespace Pandemonium.Extensions
     public static partial class Methods
     {
         /// <summary>
-        /// It returns true if @this is on weekend.
+        /// Returns true if @this is on weekend.
         /// </summary>
         public static bool OnWeekend(this DateTime @this)
         {

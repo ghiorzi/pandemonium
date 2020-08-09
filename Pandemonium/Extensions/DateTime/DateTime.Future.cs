@@ -7,6 +7,7 @@ namespace Pandemonium.Extensions
         /// <summary>
         ///  Returns true if @this is a future date
         /// </summary>
-        public static bool Future(this DateTime @this) => @this > DateTime.Now;
+        public static bool Future(this DateTime @this) 
+            => @this > DateTime.Now;
     }
 }
