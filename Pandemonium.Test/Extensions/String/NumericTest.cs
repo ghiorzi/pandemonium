@@ -1,0 +1,16 @@
+using Xunit;
+using Pandemonium.Extensions;
+
+namespace Pandemonium.Test.Extensions.Strings
+{
+    public class NumericTest
+    {
+        [Fact]
+        public void Should_Be_Numeric()
+            => Assert.True("1234".Numeric());
+
+        [Fact]
+        public void Should_Not_Be_Numeric()
+            => Assert.False("1value2".Numeric());
+    }
+}
