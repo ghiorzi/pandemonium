@@ -116,3 +116,8 @@ characters.Upsert("Shiro", 12);
 // Insert
 characters.Upsert("Stephanie", 18);
 ```
+## Contributors
+
+<a href="https://github.com/ghiorzi/pandemonium/graphs/contributors">
+  <img src="https://contributors-img.web.app/image?repo=ghiorzi/pandemonium" />
+</a>
