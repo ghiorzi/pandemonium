@@ -7,16 +7,18 @@ namespace Pandemonium
     public static partial class Methods
     {
         /// <summary>
-        /// Returns a clone of the object, with a new memory reference. <b>The class needs be Serializable</b>.
+        /// Returns a clone of the object, with a new memory reference. <b>The type must be serializable</b>.
         /// </summary>
         public static T Clone<T>(this T @this)
         {
-            MemoryStream stream = new MemoryStream();
-            IFormatter formatter = new BinaryFormatter();
-            formatter.Serialize(stream, @this);
-            stream.Seek(0, SeekOrigin.Begin);
-            object newObject = formatter.Deserialize(stream);
-            return (T)newObject;
+            using (var stream = new MemoryStream())
+            {
+                IFormatter formatter = new BinaryFormatter();
+                formatter.Serialize(stream, @this);
+                stream.Seek(0, SeekOrigin.Begin);
+                object newObject = formatter.Deserialize(stream);
+                return (T)newObject;
+            }
         }
     }
 }
