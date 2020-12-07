@@ -12,7 +12,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Include="..\Resources\logo_package.png" Pack="true" PackagePath=""/>
+    <None Include="..\Resources\logo_package.png" Pack="true" PackagePath="" />
   </ItemGroup>
 
 </Project>
