@@ -5,10 +5,10 @@
     <PackageId>Pandemonium</PackageId>
     <PackageIcon>logo_package.png</PackageIcon>
     <Description>Spoil everything from the start</Description>
-    <Version>2.1.0</Version>
+    <Version>2.2.0</Version>
     <Authors>ghiorzi</Authors>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <RepositoryUrl>https://github.com/ghiorzi/Pandemonium</RepositoryUrl>
+    <RepositoryUrl>https://github.com/ghiorzi/pandemonium</RepositoryUrl>
   </PropertyGroup>
 
   <ItemGroup>
