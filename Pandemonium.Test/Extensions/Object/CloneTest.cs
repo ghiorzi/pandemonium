@@ -4,7 +4,7 @@ using Xunit;
 
 namespace Pandemonium.Test.Extensions.Object
 {
-    public class CloneTests
+    public class CloneTest
     {
         [Fact]
         public void Should_Clone_Object_Values_To_New_Reference()
