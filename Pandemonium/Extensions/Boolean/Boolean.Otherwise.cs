@@ -1,4 +1,5 @@
 ﻿using System;
+using Pandemonium.Types;
 
 namespace Pandemonium
 {
@@ -7,10 +8,12 @@ namespace Pandemonium
         /// <summary>
         /// It runs the action when the value is false
         /// </summary>
-        public static void Otherwise(this bool @this, Action action)
+        public static Nothing Otherwise(this bool @this, Action action)
         {
             if (!@this)
                 action();
+            
+            return Nothing.Of();
         }
 
         /// <summary>

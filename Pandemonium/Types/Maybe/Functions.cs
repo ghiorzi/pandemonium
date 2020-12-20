@@ -24,13 +24,15 @@ namespace Pandemonium.Types
         /// </summary>
         /// <param name="OnSome">Action that will be invoked when having a value</param>
         /// <param name="OnNone">Action that will be invoked when not having a value</param>
-        public void Match(Action<T> OnSome, Action OnNone)
+        public Nothing Match(Action<T> OnSome, Action OnNone)
         {
             var self = this;
 
             HasValue
                 .Then(() => OnSome(self._value))
                 .Otherwise(() => OnNone());
+            
+            return Nothing.Of();
         }
         #endregion
 
