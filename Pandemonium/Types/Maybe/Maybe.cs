@@ -10,12 +10,12 @@ namespace Pandemonium.Types
     {
         public static Maybe<T> None => new Maybe<T>();
 
-        public bool HasValue => _value != null;
+        public bool HasValue => _value.NotDefault();
         public bool HasNoValue => !HasValue;
 
         private readonly T _value;
 
-        private Maybe(T value)
+        internal Maybe(T value)
             => _value = value;
     }
 }

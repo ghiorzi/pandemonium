@@ -1,7 +1,7 @@
 using Xunit;
 using Pandemonium.Types;
 
-namespace Pandemonium.Test.Types.Match
+namespace Pandemonium.Test.Types.MaybeTest
 {
     public class MatchTest
     {
@@ -10,13 +10,14 @@ namespace Pandemonium.Test.Types.Match
         {
             Maybe<string> maybe = "value";
 
-            bool result = maybe
-                               .Match<bool>(
-                                    OnSome: (value) => true,
-                                    OnNone: () => false
-                                );
+            bool Flow =
+                maybe
+                    .Match<bool>(
+                        onSome: (value) => true,
+                        onNone: () => false
+                    );
             
-            Assert.True(result);
+            Assert.True(Flow);
         }
 
         [Fact]
@@ -26,8 +27,8 @@ namespace Pandemonium.Test.Types.Match
 
             maybe
                 .Match(
-                    OnSome: (value) => Assert.True(true), // pass
-                    OnNone: () => Assert.True(false) // fail
+                    onSome: (value) => Assert.True(true), // pass
+                    onNone: () => Assert.True(false) // fail
                 );
         }
 
@@ -36,13 +37,14 @@ namespace Pandemonium.Test.Types.Match
         {
             Maybe<string> maybe = null;
 
-            bool result = maybe
-                               .Match<bool>(
-                                    OnSome: (value) => true,
-                                    OnNone: () => false
-                                );
+            bool Flow = 
+                maybe.
+                    Match<bool>(
+                        onSome: (value) => true,
+                        onNone: () => false
+                   );
             
-            Assert.False(result);
+            Assert.False(Flow);
         }
 
         [Fact]
@@ -52,8 +54,8 @@ namespace Pandemonium.Test.Types.Match
 
             maybe
                 .Match(
-                    OnSome: (value) => Assert.True(false), // fail
-                    OnNone: () => Assert.False(false) // pass
+                    onSome: (value) => Assert.True(false), // fail
+                    onNone: () => Assert.False(false) // pass
                 );
         }
     }
