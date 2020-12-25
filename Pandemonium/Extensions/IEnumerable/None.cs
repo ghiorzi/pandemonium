@@ -11,6 +11,5 @@ namespace Pandemonium
         /// </summary>
         public static bool None<T>(this IEnumerable<T> @this, Func<T, bool> predicate)
             => !@this.Any(predicate);
-        
     }
 }
