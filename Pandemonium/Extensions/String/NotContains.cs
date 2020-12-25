@@ -6,7 +6,6 @@ namespace Pandemonium
     {
         public static bool NotContains(this string @this, string value) 
             => !@this.Contains(value);
-
         public static bool NotContains(this string @this, string value, StringComparison comparison)
             => !@this.Contains(comparison, value);
 
