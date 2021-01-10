@@ -2,7 +2,7 @@ using System;
 
 namespace Pandemonium
 {
-    public static partial class Methods
+    public static partial class Functions
     {
         /// <summary>
         ///  It returns true if the value is between @min and @max, otherwise false

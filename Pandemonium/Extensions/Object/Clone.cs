@@ -4,7 +4,7 @@ using System.Runtime.Serialization.Formatters.Binary;
 
 namespace Pandemonium
 {
-    public static partial class Methods
+    public static partial class Functions
     {
         /// <summary>
         /// It returns a clone of @this, with a new memory reference. <b>The type must be serializable</b>.

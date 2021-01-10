@@ -2,7 +2,7 @@ using System;
 
 namespace Pandemonium
 {
-    public static partial class Methods
+    public static partial class Functions
     {
         public static TimeSpan Days(this sbyte @this) 
             => TimeSpan.FromDays(@this);

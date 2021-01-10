@@ -2,7 +2,7 @@ using System.Text.RegularExpressions;
 
 namespace Pandemonium
 {
-    public static partial class Methods
+    public static partial class Functions
     {
         public static MatchCollection Matches(this string input, string pattern)
             => Regex.Matches(input, pattern);

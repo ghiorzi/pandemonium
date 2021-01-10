@@ -2,7 +2,7 @@ using System;
 
 namespace Pandemonium
 {
-    public static partial class Methods
+    public static partial class Functions
     {
         public static bool None(this string @this, params string[] values) 
             => !@this.Any(values);

@@ -1,6 +1,6 @@
 namespace Pandemonium
 {
-    public static partial class Methods
+    public static partial class Functions
     {
         /// <summary>
         /// It returns true if @this contains only whitespaces

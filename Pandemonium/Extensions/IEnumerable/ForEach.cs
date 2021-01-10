@@ -4,7 +4,7 @@ using Pandemonium.Types;
 
 namespace Pandemonium
 {
-    public static partial class Methods
+    public static partial class Functions
     {
         public static Nothing ForEach<T>(this IEnumerable<T> @this, Action<T> action)
         {

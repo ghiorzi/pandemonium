@@ -2,7 +2,7 @@ using System.Collections.Generic;
 
 namespace Pandemonium
 {
-    public static partial class Methods
+    public static partial class Functions
     {
         /// <summary>
         /// It creates a single item list 

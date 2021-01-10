@@ -3,7 +3,7 @@ using Pandemonium.Types;
 
 namespace Pandemonium
 {
-    public static partial class Methods
+    public static partial class Functions
     {
         /// <summary>
         /// It runs the action when the value is false

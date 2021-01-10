@@ -2,7 +2,7 @@ using System;
 
 namespace Pandemonium
 {
-    public static partial class Methods
+    public static partial class Functions
     {
         public static bool Contains(this string @this, string value) 
             => @this.IndexOf(value) != -1;

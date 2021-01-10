@@ -2,7 +2,7 @@ using System.Collections.Generic;
 
 namespace Pandemonium
 {
-    public static partial class Methods
+    public static partial class Functions
     {
         /// <summary>
         /// It returns true if value has at least one of the keys, otherwise returns false

@@ -2,7 +2,7 @@
 
 namespace Pandemonium
 {
-    public static partial class Methods
+    public static partial class Functions
     {
         /// <summary>
         /// It runs the action if value is true

@@ -3,7 +3,7 @@ using System.Globalization;
 
 namespace Pandemonium
 {
-    public static partial class Methods
+    public static partial class Functions
     {
         private const sbyte NOVEMBER = 11;
 

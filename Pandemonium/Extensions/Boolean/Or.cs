@@ -1,6 +1,6 @@
 ﻿namespace Pandemonium
 {
-    public static partial class Methods
+    public static partial class Functions
     {
         /// <summary>
         /// It return true when at least one value is true

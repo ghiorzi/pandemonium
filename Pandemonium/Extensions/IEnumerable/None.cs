@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace Pandemonium
 {
-    public static partial class Methods
+    public static partial class Functions
     {
         /// <summary>
         /// It returns true if there is no value that matches the predicate
