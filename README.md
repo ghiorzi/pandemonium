@@ -103,18 +103,103 @@ string letters = "123 text".Where(value => value.Letter()); // text
 "123 text".Remove(value => value.Letter() || value.Whitespace()); // 123
 ```
 
-## Insert or update? Yes
-```csharp
-var characters = new Dictionary<string, int>()
-{
-    ["Sora"] = 18,
-    ["Shiro"] = 11
-};
+## Stop worring about null
 
-// Update
-characters.Upsert("Shiro", 12);
-// Insert
-characters.Upsert("Stephanie", 18);
+```csharp
+Maybe<string> maybe = "I am not null";
+
+// Match || Match<T> 
+maybe
+  .Match(
+      // If there's a value
+      onSome: (value) => WriteLine(value),
+      // Otherwise
+      onNone: () => WriteLine("value is null")
+  );
+```
+
+## Enjoy the power of chaining
+
+```csharp
+#region Simple
+// <success, failure>
+var isUniqueUsername = Flow.Of<bool, Exception>(true);
+
+// Match || Match<T> 
+isUniqueUsername
+  .Match(
+    // If it's a bool type (success)
+    onSuccess: (value) => WriteLine(value),
+    // If it's a exception type (failure)
+    onFailure: (error) => WriteLine(error)
+  );
+
+// Action || Action<T>
+isUniqueUsername
+  // It runs only If it's a bool type (success)
+  .OnSuccess((value) => WriteLine(value));
+
+// Action || Action<T>
+isUniqueUsername
+    // It runs only if it's a exception type (failure)
+  .OnFailure((error) => WriteLine(error));
+#endregion
+
+#region With objects 
+var account = Flow.Of<Account, Exception>(new Account());
+
+account
+  // It checks if account can withdraw 1000$
+  .Ensure(a => a.CanWithdraw(1000), new Exception("It cannot withdraw"))
+  // From here, it will run only if "CanWithdraw" returned true
+  .Tap(a => a.Withdraw(1000))
+  .Tap(a => a.Freeze())
+  .Match(
+    // If all steps were successful 
+    onSuccess: (a) => WriteLine(a.Amount),
+    // if at least one step has failed, it can be handle here
+    onFailure: (error) => WriteLine(error)
+  );
+#endregion
+
+#region With Maybe 
+Maybe<string> maybe = "I am not null";
+
+// Match || Match<T> 
+maybe
+  .Then((value) => Flow.Of<string, Exception>(value), new Exception("It must have a value"))
+  .Ensure(value => value.NotEmpty())
+  .Tap(value => WriteLine(value))
+  .Finally(_ => WriteLine("End of flow"));
+#endregion
+
+#region With Nothing (void)
+// Given a function
+Nothing Write(string message) 
+{
+  WriteLine(message);
+
+  return Nothing.Of();
+}
+
+Flow<string, Exception> WriteTwice(string message) 
+{
+  WriteLine(message);
+  WriteLine(message);
+
+  return message;
+}
+
+
+Write("Hello")
+  .Then(() => WriteTwice("Hello again"))
+  .Match(
+    onSuccess: (value) => ...
+    onFailure: (error) => ...
+  );
+
+#endregion
+
 ```
 ## Contributors
 

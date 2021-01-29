@@ -10,14 +10,14 @@ namespace Pandemonium.Test.Types.MaybeTest
         {
             Maybe<string> maybe = "value";
 
-            bool Flow =
+            bool result =
                 maybe
                     .Match<bool>(
                         onSome: (value) => true,
                         onNone: () => false
                     );
             
-            Assert.True(Flow);
+            Assert.True(result);
         }
 
         [Fact]
