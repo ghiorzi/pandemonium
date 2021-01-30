@@ -201,6 +201,32 @@ Write("Hello")
 #endregion
 
 ```
+
+## Make code more explicit
+
+```csharp
+// Flow<string, Exception>
+var nonEmptyString = NonEmptyString.Of("I'm not empty");
+
+// Flow<sbyte | short | int | long | float | double | decimal, Exception>
+var nonNegativeNumber = NonNegativeNumber.Of(1);
+
+// now enjoy the power of chaining
+```
+
+## Set your own exceptions (optional)
+```csharp
+var exceptions = 
+  new Exceptions(
+    new NonEmptyStringCustomException(),
+    new NonNegativeNumberCustomException(),
+    new MaybeExceptionCustomerException()
+  );
+
+// use ServiceCollection
+services.AddPandemonium(exceptions);
+```
+
 ## Contributors
 
 <a href="https://github.com/ghiorzi/pandemonium/graphs/contributors">

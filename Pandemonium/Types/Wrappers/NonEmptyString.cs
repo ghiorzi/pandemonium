@@ -3,7 +3,7 @@ using Pandemonium.Configurations;
 
 namespace Pandemonium.Types
 {
-    public struct NonEmptyString
+    public class NonEmptyString
     {
         public static Flow<string, Exception> Of(string value)
         {

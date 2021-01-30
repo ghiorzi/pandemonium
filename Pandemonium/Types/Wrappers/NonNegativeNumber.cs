@@ -3,7 +3,7 @@ using Pandemonium.Configurations;
 
 namespace Pandemonium.Types
 {
-    public struct NonNegativeNumber
+    public class NonNegativeNumber
     {
         public static Flow<sbyte, Exception> Of(sbyte value)
         {
