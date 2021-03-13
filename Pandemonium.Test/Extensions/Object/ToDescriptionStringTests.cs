@@ -39,6 +39,15 @@ namespace Pandemonium.Test.Extensions.Object
         }
 
         [Fact]
+        public void Should_Return_String_Description_When_Primitive_Object_Not_Null()
+        {
+            var @object = "Test";
+
+            string description = @object.ToDescriptionString();
+            Assert.NotEmpty(description);
+        }
+
+        [Fact]
         public void Should_Not_Return_String_Description_When_Object_Is_Null()
         {
             object @object = null;
