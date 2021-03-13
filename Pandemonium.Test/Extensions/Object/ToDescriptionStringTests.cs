@@ -23,7 +23,6 @@ namespace Pandemonium.Test.Extensions.Object
 
             string description = @object.ToDescriptionString();
             Assert.NotEmpty(description);
-            Console.WriteLine(description);
         }
     }
 }
