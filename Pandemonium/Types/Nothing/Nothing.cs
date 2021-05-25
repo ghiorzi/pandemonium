@@ -10,11 +10,7 @@ namespace Pandemonium.Types
         public static Nothing Of()
             => new Nothing();
         
-        /// <summary>
-        /// It allows to start a flow
-        /// </summary>
-        /// <param name="function">Function that will be invoked</param>
-        public Flow<T, TError> Then<T, TError>(Func<Flow<T, TError>> function)
+        public Failable<T> Do<T>(Func<Failable<T>> function)
             => function();
     }
 }

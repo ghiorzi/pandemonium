@@ -6,56 +6,56 @@ namespace Pandemonium.Test.Types.MaybeTest
     public class MatchTest
     {
         [Fact]
-        public void Should_Run_OnSome_Function_Given_A_Value() 
+        public void Should_Run_Value_Function_Given_A_Value() 
         {
             Maybe<string> maybe = "value";
 
-            bool result =
+            bool value =
                 maybe
-                    .Match<bool>(
-                        onSome: (value) => true,
-                        onNone: () => false
+                    .Match(
+                        value: (_) => true,
+                        empty: () => false
                     );
             
-            Assert.True(result);
+            Assert.True(value);
         }
 
         [Fact]
-        public void Should_Run_OnSome_Action_Given_A_Value() 
+        public void Should_Run_Value_Action_Given_A_Value() 
         {
             Maybe<string> maybe = "value";
 
             maybe
                 .Match(
-                    onSome: (value) => Assert.True(true), // pass
-                    onNone: () => Assert.True(false) // fail
+                    value: (_) => Assert.True(true), // pass
+                    empty: () => Assert.True(false) // fail
                 );
         }
 
         [Fact]
-        public void Should_Run_OnNone_Function_Given_Null() 
+        public void Should_Run_Empty_Function_Given_Null() 
         {
             Maybe<string> maybe = null;
 
-            bool Flow = 
+            bool value = 
                 maybe.
-                    Match<bool>(
-                        onSome: (value) => true,
-                        onNone: () => false
+                    Match(
+                        value: (_) => true,
+                        empty: () => false
                    );
             
-            Assert.False(Flow);
+            Assert.False(value);
         }
 
         [Fact]
-        public void Should_Run_OnNone_Action_Given_Null() 
+        public void Should_Run_Empty_Action_Given_Null() 
         {
             Maybe<string> maybe = null;
 
             maybe
                 .Match(
-                    onSome: (value) => Assert.True(false), // fail
-                    onNone: () => Assert.False(false) // pass
+                    value: (_) => Assert.True(false), // fail
+                    empty: () => Assert.False(false) // pass
                 );
         }
     }

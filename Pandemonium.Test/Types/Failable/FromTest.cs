@@ -2,24 +2,24 @@ using Xunit;
 using Pandemonium.Types;
 using System;
 
-namespace Pandemonium.Test.Types.FlowTest
+namespace Pandemonium.Test.Types.FailableTest
 {
-    public class OfTest
+    public class FromTest
     {
         [Fact]
         public void Should_Create_Success() 
         {
-            var flow = Flow.Of<bool, Exception>(true);
+            var value = Failable.From(true);
                     
-            Assert.True(flow.Succeeded);
+            Assert.True(value.Succeeded);
         }
 
         [Fact]
         public void Should_Create_Failure() 
         {
-            var flow = Flow.Of<bool, Exception>(new Exception());
+            var value = Failable.From(new Exception());
                     
-            Assert.True(flow.Failed);
+            Assert.True(value.Failed);
         }
     }
 }

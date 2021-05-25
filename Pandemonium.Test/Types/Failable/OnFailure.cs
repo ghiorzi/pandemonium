@@ -2,35 +2,35 @@ using Xunit;
 using Pandemonium.Types;
 using System;
 
-namespace Pandemonium.Test.Types.FlowTest
+namespace Pandemonium.Test.Types.FailableTest
 {
     public class OnFailureTest
     {
         [Fact]
         public void Should_Run_Action_Given_Failure() 
         {
-            var flow = Flow.Of<bool, Exception>(new Exception("Failure action"));
+            Failable<bool> value = new Exception("Failure action");
                     
             // Action
-            flow
-                .OnFailure(() => Assert.True(flow.Failed));
+            value
+                .OnFailure(() => Assert.True(value.Failed));
             
             // Action<T>
-            flow
+            value
                 .OnFailure((error) => Assert.Equal("Failure action", error.Message));
         }
 
         [Fact]
         public void Should_Not_Run_Action_Given_Success() 
         {
-            var flow = Flow.Of<bool, Exception>(true);
+            Failable<bool> value = true;
                     
             // Action
-            flow
+            value
                 .OnFailure(() => throw new Exception("Test has failed. It should not run this function"));
             
             // Action<T>
-            flow
+            value
                 .OnFailure((_) => throw new Exception("Test has failed. It should not run this function"));
         }
     }

@@ -5,7 +5,7 @@ namespace Pandemonium.Types
 {
     public class NonEmptyString
     {
-        public static Flow<string, Exception> Of(string value)
+        public static Failable<string> From(string value)
         {
             if(value.Empty())
                 return Configuration.Exceptions.NonEmptyStringException;

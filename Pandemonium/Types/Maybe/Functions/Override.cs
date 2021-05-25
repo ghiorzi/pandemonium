@@ -7,7 +7,7 @@ namespace Pandemonium.Types
 
         public override int GetHashCode()
         {
-            if (HasNoValue)
+            if (Empty)
                 return 0;
 
             return _value.GetHashCode();
@@ -15,10 +15,10 @@ namespace Pandemonium.Types
 
         public override string ToString()
         {
-            if (HasNoValue)
+            if (Empty)
                 return "It has no value";
 
-            return _value.ToString();
+            return _value?.ToString();
         }
     }
 }

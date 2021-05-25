@@ -2,7 +2,7 @@ using System;
 
 namespace Pandemonium.Types
 {
-    public partial struct Flow<T, TError>
+    public partial struct Failable<T>
     {
         public Nothing OnSuccess(Action action)
         {

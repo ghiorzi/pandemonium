@@ -5,7 +5,7 @@ namespace Pandemonium.Types
 {
     public class NonNegativeNumber
     {
-        public static Flow<sbyte, Exception> Of(sbyte value)
+        public static Failable<sbyte> From(sbyte value)
         {
             if(value.Negative())
                 return Configuration.Exceptions.NonNegativeNumberException;
@@ -13,7 +13,7 @@ namespace Pandemonium.Types
             return value;
         }
 
-        public static Flow<short, Exception> Of(short value)
+        public static Failable<short> From(short value)
         {
             if(value.Negative())
                 return Configuration.Exceptions.NonNegativeNumberException;
@@ -21,7 +21,7 @@ namespace Pandemonium.Types
             return value;
         }
 
-        public static Flow<int, Exception> Of(int value)
+        public static Failable<int> From(int value)
         {
             if(value.Negative())
                 return Configuration.Exceptions.NonNegativeNumberException;
@@ -29,7 +29,7 @@ namespace Pandemonium.Types
             return value;
         }
 
-        public static Flow<long, Exception> Of(long value)
+        public static Failable<long> From(long value)
         {
             if(value.Negative())
                 return Configuration.Exceptions.NonNegativeNumberException;
@@ -37,7 +37,7 @@ namespace Pandemonium.Types
             return value;
         }
 
-        public static Flow<float, Exception> Of(float value)
+        public static Failable<float> From(float value)
         {
             if(value.Negative())
                 return Configuration.Exceptions.NonNegativeNumberException;
@@ -45,7 +45,7 @@ namespace Pandemonium.Types
             return value;
         }
 
-        public static Flow<double, Exception> Of(double value)
+        public static Failable<double> From(double value)
         {
             if(value.Negative())
                 return Configuration.Exceptions.NonNegativeNumberException;
@@ -53,7 +53,7 @@ namespace Pandemonium.Types
             return value;
         }
 
-        public static Flow<decimal, Exception> Of(decimal value)
+        public static Failable<decimal> From(decimal value)
         {
             if(value.Negative())
                 return Configuration.Exceptions.NonNegativeNumberException;

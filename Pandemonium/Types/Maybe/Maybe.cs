@@ -11,7 +11,7 @@ namespace Pandemonium.Types
         public static Maybe<T> None => new Maybe<T>();
 
         public bool HasValue => _value.NotDefault();
-        public bool HasNoValue => !HasValue;
+        public bool Empty => !HasValue;
 
         private readonly T _value;
 

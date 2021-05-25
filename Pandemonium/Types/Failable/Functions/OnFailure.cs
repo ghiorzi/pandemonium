@@ -2,7 +2,7 @@ using System;
 
 namespace Pandemonium.Types
 {
-    public partial struct Flow<T, TError>
+    public partial struct Failable<T>
     {
         public Nothing OnFailure(Action action)
         {
@@ -12,7 +12,7 @@ namespace Pandemonium.Types
             return Nothing.Of();
         }
 
-        public Nothing OnFailure(Action<TError> action)
+        public Nothing OnFailure(Action<Exception> action)
         {
             if (Failed)
                 action(_error);

@@ -2,14 +2,14 @@ using Xunit;
 using Pandemonium.Types;
 using System;
 
-namespace Pandemonium.Test.Types.FlowTest
+namespace Pandemonium.Test.Types.FailableTest
 {
     public class OnSuccessTest
     {
         [Fact]
         public void Should_Run_Action_Given_Success() 
         {
-            var flow = Flow.Of<bool, Exception>(true);
+            Failable<bool> flow = true;
                     
             // Action
             flow
@@ -23,7 +23,7 @@ namespace Pandemonium.Test.Types.FlowTest
         [Fact]
         public void Should_Not_Run_Action_Given_Failure() 
         {
-            var flow = Flow.Of<bool, Exception>(new Exception());
+            Failable<bool> flow = new Exception();
                     
             // Action
             flow
