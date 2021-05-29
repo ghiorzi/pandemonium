@@ -5,9 +5,9 @@ namespace Pandemonium
 {
     public static partial class Functions
     {
-        public static string Where(this string @this, Func<char, bool> predicate)
+        public static string Where(this string self, Func<char, bool> predicate)
         {
-            char[] value = @this.ToCharArray();
+            char[] value = self.ToCharArray();
 
             return new string(value.Where(predicate).ToArray());
         }

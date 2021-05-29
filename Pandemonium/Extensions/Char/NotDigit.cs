@@ -7,7 +7,7 @@ namespace Pandemonium
         /// <summary>
         /// It returns true if value is not a digit, otherwise returns false
         /// </summary> 
-        public static bool NotDigit(this char @this) 
-            => !Char.IsDigit(@this);
+        public static bool NotDigit(this char self) 
+            => !Char.IsDigit(self);
     }
 }

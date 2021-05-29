@@ -7,20 +7,20 @@ namespace Pandemonium
         /// <summary>
         /// It runs the action if value is true
         /// </summary>
-        public static bool Then(this bool @this, Action action)
+        public static bool Then(this bool self, Action action)
         {
-            if (@this)
+            if (self)
                 action();
 
-            return @this;
+            return self;
         }
 
         /// <summary>
         /// It runs the function if value is true
         /// </summary>
-        public static T Then<T>(this bool @this, Func<T> function)
+        public static T Then<T>(this bool self, Func<T> function)
         {
-            if (@this)
+            if (self)
                 return function();
 
             return default;

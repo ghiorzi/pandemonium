@@ -2,7 +2,8 @@ namespace Pandemonium
 {
     public static partial class Functions
     {
-        public static bool NotNullable<T>(this T @this) 
+        #pragma warning disable IDE0060
+        public static bool NotNullable<T>(this T self) 
             => default(T) != null;
     }
 }

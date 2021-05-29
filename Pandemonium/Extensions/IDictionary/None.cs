@@ -7,7 +7,7 @@ namespace Pandemonium
         /// <summary>
         /// It returns true if there's no key equal to @keys, otherwise returns false
         /// </summary>
-        public static bool None<TKey, TValue>(this IDictionary<TKey, TValue> @this, params TKey[] keys)
-            => !@this.Any(keys);
+        public static bool None<TKey, TValue>(this IDictionary<TKey, TValue> self, params TKey[] keys)
+            => !self.Any(keys);
     }
 }

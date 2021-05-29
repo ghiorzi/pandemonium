@@ -14,7 +14,7 @@ namespace Pandemonium.Test.Extensions.Date
 
             // yeah, i'm lazy
             for (int i = 3; i <= 7; i++)
-                dates.Add(new DateTime(2020, 8, i));
+                dates.Add(new (2020, 8, i));
 
             bool result = new DateTime(2020, 8, 15).NotIn(dates.ToArray());
 
@@ -28,7 +28,7 @@ namespace Pandemonium.Test.Extensions.Date
 
             // yeah, i'm lazy
             for (int i = 3; i <= 7; i++)
-                dates.Add(new DateTime(2020, 8, i));
+                dates.Add(new (2020, 8, i));
 
             bool result = new DateTime(2020, 8, 5).NotIn(dates.ToArray());
 

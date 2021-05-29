@@ -5,7 +5,7 @@
         /// <summary>
         /// It return true when at least one value is true
         /// </summary>
-        public static bool Or(this bool @this, bool value)
-            => @this || value;
+        public static bool Or(this bool self, bool value)
+            => self || value;
     }
 }

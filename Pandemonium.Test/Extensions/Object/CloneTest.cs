@@ -1,5 +1,6 @@
 ﻿using System;
-using System.Runtime.Serialization;
+using System.Collections.Generic;
+using System.Linq;
 using Xunit;
 
 namespace Pandemonium.Test.Extensions.Object
@@ -9,44 +10,48 @@ namespace Pandemonium.Test.Extensions.Object
         [Fact]
         public void Should_Clone_Object_Values_To_New_Reference()
         {
-            Sample value = new Sample { Anything = "anything" };
+            Sample value = new() { Value = "value" };
 
-            Sample newObject = value.Clone();
+            Sample newValue = value.Clone();
 
-            Assert.False(value.Equals(newObject));
-            Assert.Equal(value.Anything, newObject.Anything);
+            Assert.False(value.Equals(newValue));
+            Assert.Equal(value.Value, newValue.Value);
 
-            value.Anything = "another";
+            value.Value = "another value";
 
-            Assert.NotEqual(value.Anything, newObject.Anything);
+            Assert.NotEqual(value.Value, newValue.Value);
+        }
+
+         [Fact]
+        public void Should_Clone_IEnumerable_Values_To_New_Reference()
+        {
+            IEnumerable<Sample> value = new Sample() { Value = "value" }.ToList();
+
+            IEnumerable<Sample> copy = value.Clone();
+
+            Assert.False(value.Equals(copy));
+            Assert.Equal(value.First().Value, copy.First().Value);
+
+            value.First().Value = "another value";
+
+            Assert.NotEqual(value.First().Value, copy.First().Value);
         }
 
         [Fact]
-        public void Should_Throw_SerializationException_Try_Serialize_Non_Serializeble_Class()
+        public void Should_Clone_Array_Values_To_New_Reference()
         {
-            object value = new { Anything = "anything" };
-            Assert.Throws<SerializationException>(() => value.Clone());
+            int[] value = { 1, 2, 3 };
+
+            int[] copy = value.Clone<int[]>();
+
+            Assert.False(value.Equals(copy));
+            Assert.Equal(value.First(), copy.First());
         }
     }
 
     [Serializable]
     internal class Sample
     {
-        public string Anything { get; set; }
-
-        public override bool Equals(object obj)
-        {
-            if (!ReferenceEquals(this, obj))
-            {
-                return false;
-            }
-
-            return base.Equals(obj);
-        }
-
-        public override int GetHashCode()
-        {
-            return base.GetHashCode();
-        }
+        public string Value { get; set; }
     }
 }

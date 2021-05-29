@@ -7,25 +7,25 @@ namespace Pandemonium
     {
         private const sbyte MAY = 5;
 
-        public static DateTime May(this int @this, int year) 
-            => new DateTime(year, MAY, @this);
+        public static DateTime May(this int self, int year) 
+            => new (year, MAY, self);
         
-        public static DateTime May(this int @this, int year, Calendar calendar) 
-            => new DateTime(year, MAY, @this, calendar);
+        public static DateTime May(this int self, int year, Calendar calendar) 
+            => new (year, MAY, self, calendar);
 
-        public static DateTime May(this int @this, int year, int hour, int minute, int second) 
-            => new DateTime(year, MAY, @this, hour, minute, second);
+        public static DateTime May(this int self, int year, int hour, int minute, int second) 
+            => new (year, MAY, self, hour, minute, second);
 
-        public static DateTime May(this int @this, int year, int hour, int minute, int second, DateTimeKind kind) 
-            => new DateTime(year, MAY, @this, hour, minute, second, kind);
+        public static DateTime May(this int self, int year, int hour, int minute, int second, DateTimeKind kind) 
+            => new (year, MAY, self, hour, minute, second, kind);
 
-        public static DateTime May(this int @this, int year, int hour, int minute, int second, Calendar calendar) 
-            => new DateTime(year, MAY, @this, hour, minute, second, calendar);
+        public static DateTime May(this int self, int year, int hour, int minute, int second, Calendar calendar) 
+            => new (year, MAY, self, hour, minute, second, calendar);
 
-        public static DateTime May(this int @this, int year, int hour, int minute, int second, int millisecond) 
-            => new DateTime(year, MAY, @this, hour, minute, second, millisecond);
+        public static DateTime May(this int self, int year, int hour, int minute, int second, int millisecond) 
+            => new (year, MAY, self, hour, minute, second, millisecond);
 
-        public static DateTime May(this int @this, int year, int hour, int minute, int second, int millisecond, DateTimeKind kind) 
-            => new DateTime(year, MAY, @this, hour, minute, second, millisecond, kind);
+        public static DateTime May(this int self, int year, int hour, int minute, int second, int millisecond, DateTimeKind kind) 
+            => new (year, MAY, self, hour, minute, second, millisecond, kind);
     }
 }

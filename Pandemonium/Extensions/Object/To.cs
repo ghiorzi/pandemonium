@@ -7,17 +7,17 @@ namespace Pandemonium
         /// <summary>
         /// It casts value to T
         /// </summary>
-        public static T To<T>(this object @this)
+        public static T To<T>(this object self)
         {
-            if (@this != null)
+            if (self != null)
             {
                 Type target = typeof(T);
 
-                if (@this.GetType() == target)
-                    return (T)@this;
+                if (self.GetType() == target)
+                    return (T)self;
             }
 
-            return (T)@this;
+            return (T)self;
         }
     }
 }

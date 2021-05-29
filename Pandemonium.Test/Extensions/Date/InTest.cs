@@ -1,5 +1,4 @@
 using Xunit;
-using Pandemonium;
 using System;
 using System.Collections.Generic;
 
@@ -14,7 +13,7 @@ namespace Pandemonium.Test.Extensions.Date
 
             // yeah, i'm lazy
             for (int i = 3; i <= 7; i++)
-                dates.Add(new DateTime(2020, 8, i));
+                dates.Add(new (2020, 8, i));
 
             bool result = new DateTime(2020, 8, 5).In(dates.ToArray());
 
@@ -28,7 +27,7 @@ namespace Pandemonium.Test.Extensions.Date
 
             // yeah, i'm lazy
             for (int i = 3; i <= 7; i++)
-                dates.Add(new DateTime(2020, 8, i));
+                dates.Add(new (2020, 8, i));
 
             bool result = new DateTime(2020, 8, 2).In(dates.ToArray());
 

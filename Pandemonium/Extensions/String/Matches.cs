@@ -4,10 +4,10 @@ namespace Pandemonium
 {
     public static partial class Functions
     {
-        public static MatchCollection Matches(this string input, string pattern)
-            => Regex.Matches(input, pattern);
+        public static MatchCollection Matches(this string self, string pattern)
+            => Regex.Matches(self, pattern);
         
-        public static MatchCollection Matches(this string input, string pattern, RegexOptions options)
-            => Regex.Matches(input, pattern, options);
+        public static MatchCollection Matches(this string self, string pattern, RegexOptions options)
+            => Regex.Matches(self, pattern, options);
     }
 }

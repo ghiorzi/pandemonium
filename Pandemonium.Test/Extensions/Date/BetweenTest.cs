@@ -1,7 +1,4 @@
 using Xunit;
-using Pandemonium;
-using System.Collections.Generic;
-using System.Collections;
 using System;
 
 namespace Pandemonium.Test.Extensions.Date

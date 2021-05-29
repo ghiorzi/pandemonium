@@ -7,11 +7,11 @@ namespace Pandemonium
         /// <summary>
         /// It returns true if value has at least one of the keys, otherwise returns false
         /// </summary>
-        public static bool Any<TKey, TValue>(this IDictionary<TKey, TValue> @this, params TKey[] keys)
+        public static bool Any<TKey, TValue>(this IDictionary<TKey, TValue> self, params TKey[] keys)
         {
             foreach (TKey value in keys)
             {
-                if (@this.ContainsKey(value))
+                if (self.ContainsKey(value))
                     return true;
             }
 

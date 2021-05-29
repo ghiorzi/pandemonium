@@ -2,8 +2,8 @@ namespace Pandemonium.Types
 {
     public partial struct Maybe<T>
     {
-        public override bool Equals(object obj)
-            => _value.Equals(obj);
+        public override bool Equals(object other)
+            => _value.Equals(other);
 
         public override int GetHashCode()
         {

@@ -8,7 +8,7 @@ namespace Pandemonium.Types
     [Serializable]
     public partial struct Maybe<T>
     {
-        public static Maybe<T> None => new Maybe<T>();
+        public static Maybe<T> None => new ();
 
         public bool HasValue => _value.NotDefault();
         public bool Empty => !HasValue;

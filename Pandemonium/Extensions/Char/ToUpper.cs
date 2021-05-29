@@ -7,7 +7,7 @@ namespace Pandemonium
         /// <summary>
         /// It transforms a character to uppercase
         /// </summary> 
-        public static char ToUpper(this char @this) 
-            => Char.ToUpper(@this);
+        public static char ToUpper(this char self) 
+            => Char.ToUpper(self);
     }
 }

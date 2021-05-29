@@ -7,7 +7,7 @@ namespace Pandemonium
         /// <summary>
         /// It returns true if value is not whitespace, otherwise returns false
         /// </summary> 
-        public static bool NotWhitespace(this char @this) 
-            => !Char.IsWhiteSpace(@this);
+        public static bool NotWhitespace(this char self) 
+            => !Char.IsWhiteSpace(self);
     }
 }

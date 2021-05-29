@@ -4,17 +4,17 @@ namespace Pandemonium
 {
     public static partial class Functions
     {
-        public static bool Contains(this string @this, string value) 
-            => @this.IndexOf(value) != -1;
+        public static bool Contains(this string self, string value) 
+            => self.IndexOf(value) != -1;
 
-        public static bool Contains(this string @this, StringComparison comparison, string value)
-            => @this.IndexOf(value, comparison) != -1;
+        public static bool Contains(this string self, StringComparison comparison, string value)
+            => self.IndexOf(value, comparison) != -1;
 
-        public static bool Contains(this string @this, params string[] values)
+        public static bool Contains(this string self, params string[] values)
         {
             foreach (string value in values)
             {
-                bool contains = @this.IndexOf(value) != -1;
+                bool contains = self.IndexOf(value) != -1;
 
                 if (contains)
                     return true;
@@ -23,11 +23,11 @@ namespace Pandemonium
             return false;
         }
 
-        public static bool Contains(this string @this, StringComparison comparison, params string[] values)
+        public static bool Contains(this string self, StringComparison comparison, params string[] values)
         {
             foreach (string value in values)
             {
-                bool contains = @this.IndexOf(value, comparison) != -1;
+                bool contains = self.IndexOf(value, comparison) != -1;
 
                 if (contains)
                     return true;

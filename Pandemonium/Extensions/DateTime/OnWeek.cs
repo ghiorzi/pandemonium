@@ -5,9 +5,9 @@ namespace Pandemonium
     public static partial class Functions
     {
         /// <summary>
-        /// It returns true if @this is on week
+        /// It returns true if self is on week
         /// </summary>
-        public static bool OnWeek(this DateTime @this) 
-            => !@this.OnWeekend();
+        public static bool OnWeek(this DateTime self) 
+            => !self.OnWeekend();
     }
 }

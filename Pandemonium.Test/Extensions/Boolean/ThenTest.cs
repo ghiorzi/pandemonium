@@ -11,7 +11,7 @@ namespace Pandemonium.Test.Extensions.Boolean
         {
             bool result = false;
 
-            Action action = () => result = true;
+            void action() => result = true;
 
             true.Then(action);
 
@@ -21,7 +21,7 @@ namespace Pandemonium.Test.Extensions.Boolean
         [Fact]
         public void Should_Run_The_Function_Given_True_Value()
         {
-            bool function() => true;
+            static bool function() => true;
 
             bool result = true.Then(function);
 
@@ -33,7 +33,7 @@ namespace Pandemonium.Test.Extensions.Boolean
         {
             bool result = false;
 
-            Action action = () => result = true;
+            void action() => result = true;
 
             false.Then(action);
 
@@ -43,7 +43,7 @@ namespace Pandemonium.Test.Extensions.Boolean
         [Fact]
         public void Should_Not_Run_The_Function_Given_False_Value()
         {
-            bool function() => true;
+            static bool function() => true;
 
             bool result = false.Then(function);
 

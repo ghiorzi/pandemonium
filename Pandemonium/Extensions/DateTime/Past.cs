@@ -5,9 +5,9 @@ namespace Pandemonium
     public static partial class Functions
     {
         /// <summary>
-        ///  It returns true if @this is past date
+        ///  It returns true if self is past date
         /// </summary>
-        public static bool Past(this DateTime @this) 
-            => @this < DateTime.Now;
+        public static bool Past(this DateTime self) 
+            => self < DateTime.Now;
     }
 }

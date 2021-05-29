@@ -7,16 +7,16 @@ namespace Pandemonium
         /// <summary>
         /// It inserts the value if it does not exist, otherwise update it
         /// </summary>
-        public static TValue Upsert<TKey, TValue>(this IDictionary<TKey, TValue> @this, TKey key, TValue value)
+        public static TValue Upsert<TKey, TValue>(this IDictionary<TKey, TValue> self, TKey key, TValue value)
         {
-            bool notContains = !@this.ContainsKey(key);
+            bool notContains = !self.ContainsKey(key);
 
             if (notContains)
-                @this.Add(new KeyValuePair<TKey, TValue>(key, value));
+                self.Add(new KeyValuePair<TKey, TValue>(key, value));
             else
-                @this[key] = value;
+                self[key] = value;
 
-            return @this[key];
+            return self[key];
         }
     }
 }

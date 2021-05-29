@@ -7,7 +7,7 @@ namespace Pandemonium
         /// <summary>
         /// It returns true if value is not default, otherwise returns false
         /// </summary>
-        public static bool NotDefault<T>(this T @this) 
-            => !EqualityComparer<T>.Default.Equals(@this, default(T));
+        public static bool NotDefault<T>(this T self) 
+            => !EqualityComparer<T>.Default.Equals(self, default);
     }
 }

@@ -11,7 +11,7 @@ namespace Pandemonium.Test.Extensions.Boolean
         {
             bool result = false;
 
-            Action action = () => result = true;
+            void action() => result = true;
 
             false.Otherwise(action);
 
@@ -23,7 +23,7 @@ namespace Pandemonium.Test.Extensions.Boolean
         {
             bool result = false;
 
-            Action action = () => result = true;
+            void action() => result = true;
 
             true.Otherwise(action);
 

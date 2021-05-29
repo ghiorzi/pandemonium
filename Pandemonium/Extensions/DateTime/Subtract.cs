@@ -7,7 +7,7 @@ namespace Pandemonium
         /// <summary>
         /// It subtracts @days
         /// </summary>
-        public static DateTime Subtract(this DateTime @this, int days) 
-            => @this.AddDays(days * -1);
+        public static DateTime Subtract(this DateTime self, int days) 
+            => self.AddDays(days * -1);
     }
 }

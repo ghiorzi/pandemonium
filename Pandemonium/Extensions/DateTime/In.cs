@@ -5,9 +5,9 @@ namespace Pandemonium
     public static partial class Functions
     {
         /// <summary>
-        /// It returns true if @this is in @values
+        /// It returns true if self is in @values
         /// </summary>
-        public static bool In(this DateTime @this, params DateTime[] values)
-            => Array.IndexOf(values, @this) != -1; 
+        public static bool In(this DateTime self, params DateTime[] values)
+            => Array.IndexOf(values, self) != -1; 
     }
 }

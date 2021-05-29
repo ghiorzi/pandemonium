@@ -20,7 +20,6 @@ namespace Pandemonium.Test.Extensions.Date
         [Fact]
         public void Should_Not_Be_Weekend_Day()
         {
-
             // from monday to friday
             for (int i = 3; i <= 7; i++)
             {

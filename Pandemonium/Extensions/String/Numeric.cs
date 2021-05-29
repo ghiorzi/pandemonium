@@ -4,7 +4,7 @@ namespace Pandemonium
 {
     public static partial class Functions
     {
-        public static bool Numeric(this string @this) 
-            => !Regex.IsMatch(@this, "[^0-9]");
+        public static bool Numeric(this string self) 
+            => !Regex.IsMatch(self, "[^0-9]");
     }
 }

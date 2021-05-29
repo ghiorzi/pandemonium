@@ -5,7 +5,7 @@
         /// <summary>
         /// It returns true if value is false
         /// </summary>
-        public static bool False(this bool @this) 
-            => !@this;
+        public static bool False(this bool self) 
+            => !self;
     }
 }

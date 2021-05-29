@@ -1,11 +1,11 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFramework>net5.0</TargetFramework>
     <PackageId>Pandemonium</PackageId>
     <PackageIcon>logo_package.png</PackageIcon>
     <Description>Spoil everything from the start</Description>
-    <Version>2.3.0</Version>
+    <Version>3.0.0</Version>
     <Authors>ghiorzi</Authors>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <RepositoryUrl>https://github.com/ghiorzi/pandemonium</RepositoryUrl>

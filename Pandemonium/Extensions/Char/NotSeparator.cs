@@ -7,7 +7,7 @@ namespace Pandemonium
         /// <summary>
         /// It returns true if value is not a separator, otherwise returns false
         /// </summary> 
-        public static bool NotSeparator(this char @this) 
-            => !Char.IsSeparator(@this);
+        public static bool NotSeparator(this char self) 
+            => !Char.IsSeparator(self);
     }
 }

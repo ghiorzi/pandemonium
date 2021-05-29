@@ -1,14 +1,16 @@
 using System;
-using Pandemonium.Configurations;
 
 namespace Pandemonium.Types
 {
-    public class NonEmptyString
+    public sealed class NonEmptyString
     {
         public static Failable<string> From(string value)
+            => From(value, new EmptyStringException());
+
+        public static Failable<string> From(string value, Exception error)
         {
             if(value.Empty())
-                return Configuration.Exceptions.NonEmptyStringException;
+                return error;
             
             return value;
         }

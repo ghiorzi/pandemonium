@@ -5,7 +5,7 @@
         /// <summary>
         /// It returns true if both values are true
         /// </summary>
-        public static bool And(this bool @this, bool value) 
-            => @this && value;
+        public static bool And(this bool self, bool value) 
+            => self && value;
     }
 }

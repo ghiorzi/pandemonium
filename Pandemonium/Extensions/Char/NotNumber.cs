@@ -7,7 +7,7 @@ namespace Pandemonium
         /// <summary>
         /// It returns true if value is not a number, otherwise returns false
         /// </summary> 
-        public static bool NotNumber(this char @this) 
-            => !Char.IsNumber(@this);
+        public static bool NotNumber(this char self) 
+            => !Char.IsNumber(self);
     }
 }

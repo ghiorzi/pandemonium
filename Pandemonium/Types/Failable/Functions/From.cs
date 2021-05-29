@@ -13,6 +13,6 @@ namespace Pandemonium.Types
         }
         
         public static Failable<T> FromException<T>(Exception error)
-            => new Failable<T>(error);
+            => new (error);
     }
 }

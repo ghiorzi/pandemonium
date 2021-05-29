@@ -4,11 +4,11 @@ namespace Pandemonium
 {
     public static partial class Functions
     {
-        public static bool Any(this string @this, params string[] values)
+        public static bool Any(this string self, params string[] values)
         {
             foreach (string value in values)
             {
-                bool equals = @this.Equals(value);
+                bool equals = self.Equals(value);
 
                 if (equals)
                     return true;
@@ -17,11 +17,11 @@ namespace Pandemonium
             return false;
         }
 
-        public static bool Any(this string @this, StringComparison comparison, params string[] values)
+        public static bool Any(this string self, StringComparison comparison, params string[] values)
         {
             foreach (string value in values)
             {
-                bool equals = @this.Equals(value, comparison);
+                bool equals = self.Equals(value, comparison);
 
                 if (equals)
                     return true;

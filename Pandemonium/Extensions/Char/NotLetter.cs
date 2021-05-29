@@ -7,7 +7,7 @@ namespace Pandemonium
         /// <summary>
         /// It returns true if value is not a letter, otherwise returns false
         /// </summary> 
-        public static bool NotLetter(this char @this) 
-            => !Char.IsLetter(@this);
+        public static bool NotLetter(this char self) 
+            => !Char.IsLetter(self);
     }
 }

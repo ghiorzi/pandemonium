@@ -8,9 +8,9 @@ namespace Pandemonium
         /// <summary>
         /// It runs the action when the value is false
         /// </summary>
-        public static Nothing Otherwise(this bool @this, Action action)
+        public static Nothing Otherwise(this bool self, Action action)
         {
-            if (!@this)
+            if (!self)
                 action();
             
             return Nothing.Of();
@@ -19,9 +19,9 @@ namespace Pandemonium
         /// <summary>
         /// It runs the function when the value is false
         /// </summary>
-        public static T Otherwise<T>(this bool @this, Func<T> function)
+        public static T Otherwise<T>(this bool self, Func<T> function)
         {
-            if (!@this)
+            if (!self)
                 return function();
 
             return default;

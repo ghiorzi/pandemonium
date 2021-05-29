@@ -52,5 +52,20 @@ namespace Pandemonium.Test.Types.FailableTest
                 failure: (error) => throw new Exception("Test has failed. It should run the select function")
             );
         }
+
+        [Fact]
+        public void Should_Select_Exception_Given_Valid_Query_Expression() 
+        {
+            Failable<int> input = new Exception("I'm not a number");
+
+            var value =
+                from i in input
+                select i * 2;
+            
+            value.Match(
+                success: (_) => throw new Exception("Test has failed. It should not select number"),
+                failure: (error) =>  Assert.Equal("I'm not a number", error.Message)
+            );
+        }
     }
 }

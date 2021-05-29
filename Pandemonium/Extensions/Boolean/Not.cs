@@ -4,7 +4,7 @@
     {
         /// <summary>
         /// It inverts the value (true => false, false => true)
-        public static bool Not(this bool @this) 
-            => !@this;
+        public static bool Not(this bool self) 
+            => !self;
     }
 }

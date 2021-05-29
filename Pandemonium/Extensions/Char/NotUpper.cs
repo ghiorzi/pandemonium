@@ -7,7 +7,7 @@ namespace Pandemonium
         /// <summary>
         /// It returns true if value is not in uppercase, otherwise returns false
         /// </summary> 
-        public static bool NotUpper(this char @this) 
-            => !Char.IsUpper(@this);
+        public static bool NotUpper(this char self) 
+            => !Char.IsUpper(self);
     }
 }
