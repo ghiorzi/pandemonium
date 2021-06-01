@@ -4,7 +4,7 @@ using System;
 
 namespace Pandemonium.Test.Types.MaybeTest
 {
-    public class ThenTest
+    public class DoTest
     {
         [Fact]
         public void Should_Run_Success_Given_A_Value()

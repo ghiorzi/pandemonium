@@ -12,7 +12,10 @@ namespace Pandemonium.Test.Types.FailableTest
             var value = 
                 Failable.Try<int>(() => throw new Exception("Function was not implemented"));
             
-            value.OnFailure((error) => Assert.Equal("Function was not implemented", error.Message));
+            value.Match(
+                success: (_) => {},
+                failure: (error) => Assert.Equal("Function was not implemented", error.Message)
+            );
         }
 
         [Fact]
@@ -25,7 +28,10 @@ namespace Pandemonium.Test.Types.FailableTest
                     (exception) => exception.Message
                 );
             
-            value.OnFailure((error) => Assert.Equal("Function was not implemented", error.Message));
+            value.Match(
+                success: (_) => {},
+                failure: (error) => Assert.Equal("Function was not implemented", error.Message)
+            );
         }
     }
 }

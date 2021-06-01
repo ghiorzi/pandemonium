@@ -4,10 +4,10 @@ namespace Pandemonium.Types
 {
     public partial struct Failable<T>
     {
-        public Failable<T> Ensure(Predicate<T> predicate)
+        public Failable<T> Ensure(Func<T, bool> predicate)
             => Ensure(predicate, new EnsureException());
 
-        public Failable<T> Ensure(Predicate<T> predicate, Exception error)
+        public Failable<T> Ensure(Func<T, bool> predicate, Exception error)
         {
             if (Failed)
                 return this;

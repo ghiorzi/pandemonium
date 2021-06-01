@@ -10,7 +10,7 @@ namespace Pandemonium.Test.Extensions.Strings
         {
             string text = "123 - sample";
 
-            string number = text.Remove(value => value.Number());
+            string number = text.Exclude(value => value.Number());
 
             Assert.Equal(" - sample", number);
         }

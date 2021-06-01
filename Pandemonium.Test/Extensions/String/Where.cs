@@ -14,5 +14,18 @@ namespace Pandemonium.Test.Extensions.Strings
 
             Assert.Equal("123", number);
         }
+
+        [Fact]
+        public void Should_Get_Only_Numbers_Query_Expression()
+        {
+            string text = "1 2 3 - sample";
+
+            string number = 
+                from x in text
+                where x.Number()
+                select x;
+
+            Assert.Equal("123", number);
+        }
     }
 }

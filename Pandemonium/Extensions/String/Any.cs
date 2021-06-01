@@ -4,6 +4,9 @@ namespace Pandemonium
 {
     public static partial class Functions
     {
+        public static bool Any(this string self) 
+            => string.IsNullOrEmpty(self) is false;
+
         public static bool Any(this string self, params string[] values)
         {
             foreach (string value in values)
