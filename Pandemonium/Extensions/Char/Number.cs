@@ -5,9 +5,9 @@ namespace Pandemonium
     public static partial class Functions
     {
         /// <summary>
-        /// It returns true if value is a number, otherwise returns false
+        /// Indicates whether the specified Unicode character is categorized as a number
         /// </summary> 
         public static bool Number(this char self) 
-            => Char.IsNumber(self);
+            => char.IsNumber(self);
     }
 }

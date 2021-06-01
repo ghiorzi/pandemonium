@@ -4,7 +4,7 @@ using System;
 
 namespace Pandemonium.Test.Extensions.Boolean
 {
-    public class ThenTest
+    public class DoTest
     {
         [Fact]
         public void Should_Run_The_Action_Given_True_Value()
@@ -13,7 +13,7 @@ namespace Pandemonium.Test.Extensions.Boolean
 
             void action() => result = true;
 
-            true.Then(action);
+            true.Do(action);
 
             Assert.True(result);
         }
@@ -23,7 +23,7 @@ namespace Pandemonium.Test.Extensions.Boolean
         {
             static bool function() => true;
 
-            bool result = true.Then(function);
+            bool result = true.Do(function);
 
             Assert.True(result);
         }
@@ -35,7 +35,7 @@ namespace Pandemonium.Test.Extensions.Boolean
 
             void action() => result = true;
 
-            false.Then(action);
+            false.Do(action);
 
             Assert.False(result);
         }
@@ -45,7 +45,7 @@ namespace Pandemonium.Test.Extensions.Boolean
         {
             static bool function() => true;
 
-            bool result = false.Then(function);
+            bool result = false.Do(function);
 
             Assert.False(result);
         }

@@ -13,7 +13,7 @@ namespace Pandemonium.Test.Extensions.Date
             for (int i = 8; i <= 9; i++)
             {
                 var date = new DateTime(2020, 8, i);
-                Assert.True(date.OnWeekend());
+                Assert.True(date.Weekend());
             }
         }
 
@@ -24,7 +24,7 @@ namespace Pandemonium.Test.Extensions.Date
             for (int i = 3; i <= 7; i++)
             {
                 var date = new DateTime(2020, 8, i);
-                Assert.False(date.OnWeekend());
+                Assert.False(date.Weekend());
             }
         }
     }

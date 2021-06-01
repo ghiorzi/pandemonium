@@ -5,9 +5,9 @@ namespace Pandemonium
     public static partial class Functions
     {
         /// <summary>
-        /// It returns true if value is not whitespace, otherwise returns false
+        /// Indicates whether the specified Unicode character is not categorized as white space
         /// </summary> 
         public static bool NotWhitespace(this char self) 
-            => !Char.IsWhiteSpace(self);
+            => char.IsWhiteSpace(self) is false;
     }
 }

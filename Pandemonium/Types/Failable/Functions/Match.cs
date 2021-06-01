@@ -10,7 +10,7 @@ namespace Pandemonium.Types
             var self = this;
 
             Succeeded
-                .Then(() => success(self._value))
+                .Do(() => success(self._value))
                 .Otherwise(() => failure(self._error));
 
             return Nothing.Of();

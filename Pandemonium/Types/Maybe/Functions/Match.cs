@@ -12,7 +12,7 @@ namespace Pandemonium.Types
             var self = this;
 
             HasValue
-                .Then(() => value(self._value))
+                .Do(() => value(self._value))
                 .Otherwise(() => empty());
             
             return Nothing.Of();
