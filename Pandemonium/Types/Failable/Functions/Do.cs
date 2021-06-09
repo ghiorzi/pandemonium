@@ -14,6 +14,7 @@ namespace Pandemonium.Types
 
         public Failable<T> Do(Action<T> action)
         {
+            #pragma warning disable CS8604
             if(Succeeded)
                 action(_value);
 

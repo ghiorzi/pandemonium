@@ -11,8 +11,8 @@ namespace Pandemonium.Types
         {
             if (Failed)
                 return this;
-
-            if (predicate(_value) is false)
+            #pragma warning disable CS8604
+            else if (predicate(_value) is false)
                 return Failable.FromException<T>(error);
 
             return this;

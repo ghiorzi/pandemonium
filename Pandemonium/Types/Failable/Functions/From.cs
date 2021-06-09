@@ -6,6 +6,7 @@ namespace Pandemonium.Types
     {
         public static Failable<T> From<T>(T value)
         {
+            #pragma warning disable CS8604
             if (value is Exception)
                 return FromException<T>(value as Exception);
             

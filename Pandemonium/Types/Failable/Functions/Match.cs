@@ -10,6 +10,7 @@ namespace Pandemonium.Types
             var self = this;
 
             Succeeded
+                #pragma warning disable CS8604
                 .Do(() => success(self._value))
                 .Otherwise(() => failure(self._error));
 

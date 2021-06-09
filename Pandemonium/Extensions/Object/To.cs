@@ -4,9 +4,9 @@ namespace Pandemonium
 {
     public static partial class Functions
     {
-        public static T To<T>(this object self)
+        public static T? To<T>(this object self)
         {
-            if (self != null)
+            if (self is not null)
             {
                 Type target = typeof(T);
 
@@ -14,7 +14,7 @@ namespace Pandemonium
                     return (T)self;
             }
 
-            return (T)self;
+            return (T?) self;
         }
     }
 }

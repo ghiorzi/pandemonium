@@ -11,7 +11,7 @@ namespace Pandemonium
 
             return self;
         }
-        public static T Do<T>(this bool self, Func<T> function)
+        public static T? Do<T>(this bool self, Func<T> function)
         {
             if (self)
                 return function();

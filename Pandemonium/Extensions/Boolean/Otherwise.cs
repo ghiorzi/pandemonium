@@ -14,7 +14,7 @@ namespace Pandemonium
             return Nothing.Of();
         }
 
-        public static T Otherwise<T>(this bool self, Func<T> function)
+        public static T? Otherwise<T>(this bool self, Func<T> function)
         {
             if (self is false)
                 return function();
