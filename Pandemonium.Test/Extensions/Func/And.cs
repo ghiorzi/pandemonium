@@ -4,7 +4,7 @@ using System;
 
 namespace Pandemonium.Test.Extensions.Func
 {
-    public class OrTest
+    public class AndTest
     {
         [Fact]
         public void Should_Be_True()
@@ -14,13 +14,14 @@ namespace Pandemonium.Test.Extensions.Func
             Func<int, Func<int, bool>> LessThan = a => b => b < a;
             
             Func<int, bool> Run = 
-                IsEven.Or(
+                IsEven.And(
                     GreaterThan(10),
-                    LessThan(5)
+                    LessThan(20)
                 );
             
             Assert.True(Run(12));
-            Assert.True(Run(3));
+            Assert.False(Run(2));
+            Assert.False(Run(22));
         }
     }
 }
