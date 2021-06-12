@@ -12,16 +12,33 @@ namespace Pandemonium.Test.Extensions.Object
             string value = "anything";
             object result = value.To<object>();
 
-            Assert.True(result != null);
+            Assert.NotNull(result);
         }
 
         [Fact]
-        public void Should_Not_Cast_When_Int_To_String() 
+        public void Should_Not_Have_Value_When_Int_To_String() 
         {
             int value = 0;
-            var exception = Assert.Throws<InvalidCastException>(() => value.To<string>());
-       
-            Assert.NotEmpty(exception.Message);
+
+            value
+                .To<string>()
+                .Match(
+                    value: _ => throw new Exception("It should not run this block"),
+                    empty: () => Assert.True(true)
+                );
+        } 
+
+        [Fact]
+        public void Should_Not_Have_Value_When_Value_Is_Null() 
+        {
+            string value = null;
+
+            value
+                .To<object>()
+                .Match(
+                    value: _ => throw new Exception("It should not run this block"),
+                    empty: () => Assert.True(true)
+                );
         } 
     }
 }

@@ -9,15 +9,6 @@ namespace Pandemonium.Types
         internal Runnable(Func<TSource, bool> predicate)
             => _predicate = predicate;
 
-        public Action<TSource> Do(Action action)
-        {
-            return (TSource value) =>
-            {
-                if (_predicate(value))
-                    action();
-            };
-        }
-
         public Action<TSource> Do(Action<TSource> action)
         {
             return (TSource value) =>

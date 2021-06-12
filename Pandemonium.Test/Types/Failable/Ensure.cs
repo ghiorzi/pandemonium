@@ -14,7 +14,7 @@ namespace Pandemonium.Test.Types.FailableTest
             Failable<bool> value = 
                 input
                     .Do<bool>((_) => _)
-                    .Ensure(x => x == true, new Exception("Value must be true"))
+                    .Ensure(x => x == true)
                     .Do<bool>((_) => _);
                     
             value.Match(

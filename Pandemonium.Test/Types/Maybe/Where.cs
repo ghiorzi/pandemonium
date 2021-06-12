@@ -42,6 +42,22 @@ namespace Pandemonium.Test.Types.MaybeTest
         }
 
         [Fact]
+        public void Should_Not_Select_Square_Of_Ten_Given_False_State() 
+        {
+            Maybe<int> input = default;
+         
+            Failable<int> value =
+                input
+                    .Where(x => x % 2 == 1)
+                    .Select(_ => _ * _);
+                    
+            value.Match(
+                success: (_) => throw new Exception("Test has failed"),
+                failure: (_) => Assert.Equal(WHERE_EXCEPTION_MESSAGE, _.Message)
+            );
+        }
+
+        [Fact]
         public void Should_Not_Select_Square_Of_Ten_Given_Unsuccessful_Predicate() 
         {
             Maybe<int> input = 10;

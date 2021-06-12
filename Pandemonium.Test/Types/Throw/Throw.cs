@@ -26,6 +26,12 @@ namespace Pandemonium.Test.Types.ThrowTest
                 (10);
         }
 
+        [Fact]
+        public void Should_Raise_Exception_Given_Null_As_A_Predicate()
+        {
+            Assert.Throws<System.ArgumentException>(() => Throw<int, NumberIsGreaterThanEleven>.When(null));
+        }
+
         private class NumberIsGreaterThanEleven : Exception
         {
             public NumberIsGreaterThanEleven() : base("Number cannot be greater than 11") { }

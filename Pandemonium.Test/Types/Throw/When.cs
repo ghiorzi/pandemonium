@@ -35,10 +35,16 @@ namespace Pandemonium.Test.Types.ThrowTest
         [Fact]
         public void Should_Not_Catch_Exception()
         {
-            Throw<int, NumberIsGreaterThanEleven>
-                .When(x => x > 11)
-                .Catch(_ => throw new Exception("It should not run this block"))
-                (10);
+            var function = 
+                Throw<int, NumberIsGreaterThanEleven>
+                    .When(x => x > 11)
+                    .Catch(_ => _);
+            
+            function(10)
+                .Match(
+                    value: _ => throw new Exception("It should not run this block"),
+                    empty: () => Assert.True(true)
+                );
         }
 
         private class NumberIsGreaterThanEleven : Exception

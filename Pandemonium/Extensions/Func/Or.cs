@@ -16,7 +16,7 @@ namespace Pandemonium
 
                 for (int i = 0; i < functions.Length; i++)
                 {
-                    result = result || functions[i](value);
+                    result = functions[i](value);
 
                     // There is no need to compare other functions
                     if (result)

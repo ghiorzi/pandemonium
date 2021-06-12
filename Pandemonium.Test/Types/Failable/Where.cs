@@ -58,6 +58,30 @@ namespace Pandemonium.Test.Types.FailableTest
         }
 
         [Fact]
+        public void Should_Not_Select_Square_Of_Ten_Given_Failed_State() 
+        {
+            Failable<int> input = default;
+         
+            // From value
+            input
+                .Where(x => x % 2 == 1)
+                .Select(_ => _ * _)
+                .Match(
+                    success: (_) => throw new Exception("Test has failed"),
+                    failure: (_) => Assert.Equal(WHERE_EXCEPTION_MESSAGE, _.Message)
+                );
+
+            // From exception
+            Failable
+                .From<object>(new Exception("It could not create the value"))
+                .Where(x => x is not Exception)
+                .Match(
+                    success: (_) => throw new Exception("Test has failed"),
+                    failure: (_) => Assert.Equal("It could not create the value", _.Message)
+                );
+        }
+
+        [Fact]
         public void Should_Not_Select_Square_Of_Ten_Given_Unsuccessful_Predicate_With_Custom_Exception() 
         {
             Failable<int> input = 10;

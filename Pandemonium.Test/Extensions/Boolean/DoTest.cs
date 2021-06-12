@@ -23,9 +23,7 @@ namespace Pandemonium.Test.Extensions.Boolean
         {
             static bool function() => true;
 
-            bool result = true.Do(function);
-
-            Assert.True(result);
+            true.Do(function).Match(value: _ => Assert.True(_), empty: () => {});
         }
 
         [Fact]
@@ -45,9 +43,9 @@ namespace Pandemonium.Test.Extensions.Boolean
         {
             static bool function() => true;
 
-            bool result = false.Do(function);
-
-            Assert.False(result);
+            false
+                .Do(function)
+                .Match(value: _ => throw new Exception("It should not run this block"), empty: () => Assert.True(true));
         }
     }
 }

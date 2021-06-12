@@ -53,6 +53,24 @@ namespace Pandemonium
         public static Failable<ulong> Where(this ulong self, Func<ulong, bool> predicate, Exception error)
             => Where<ulong>(self, predicate, error);
 
+        public static Failable<float> Where(this float self, Func<float, bool> predicate)
+            => Where(self, predicate, new WhereException());
+
+        public static Failable<float> Where(this float self, Func<float, bool> predicate, Exception error)
+            => Where<float>(self, predicate, error);
+        
+        public static Failable<double> Where(this double self, Func<double, bool> predicate)
+            => Where(self, predicate, new WhereException());
+
+        public static Failable<double> Where(this double self, Func<double, bool> predicate, Exception error)
+            => Where<double>(self, predicate, error);
+        
+        public static Failable<decimal> Where(this decimal self, Func<decimal, bool> predicate)
+            => Where(self, predicate, new WhereException());
+
+        public static Failable<decimal> Where(this decimal self, Func<decimal, bool> predicate, Exception error)
+            => Where<decimal>(self, predicate, error);
+
         private static Failable<T> Where<T>(T value, Func<T, bool> predicate, Exception error)
         {
             #pragma warning disable CS8604

@@ -1,4 +1,5 @@
 ﻿using System;
+using Pandemonium.Types;
 
 namespace Pandemonium
 {
@@ -11,7 +12,7 @@ namespace Pandemonium
 
             return self;
         }
-        public static T? Do<T>(this bool self, Func<T> function)
+        public static Maybe<T> Do<T>(this bool self, Func<T> function)
         {
             if (self)
                 return function();

@@ -1,4 +1,5 @@
 using Xunit;
+using System;
 using Pandemonium;
 
 namespace Pandemonium.Test.Extensions.Strings
@@ -7,18 +8,14 @@ namespace Pandemonium.Test.Extensions.Strings
     {
         [Fact]
         public void Should_Have_Sample_In_Values()
-        {
-            bool result = "sample".None("s", "a", "m", "sample");
-
-            Assert.False(result);
-        }
-
+            => Assert.False("sample".None("s", "a", "m", "sample"));
+        
         [Fact]
         public void Should_Not_Have_Sample_In_Values()
         {
-            bool result = "sample".None("s", "a", "m", "samplesss");
-
-            Assert.True(result);
+            Assert.True("".None());      
+            Assert.True("sample".None("s", "a", "m", "sampless"));
+            Assert.True("sample".None(StringComparison.OrdinalIgnoreCase, "s", "a", "m", "sampless"));
         }
     }
 }

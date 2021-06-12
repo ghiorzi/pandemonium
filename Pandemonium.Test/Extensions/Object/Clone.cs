@@ -12,14 +12,19 @@ namespace Pandemonium.Test.Extensions.Object
         {
             Sample value = new() { Value = "value" };
 
-            Sample newValue = value.Clone();
+            value
+                .Clone()
+                .Match(
+                    value: _ => {
+                        Assert.False(value.Equals(_));
+                        Assert.Equal(value.Value, _.Value);
 
-            Assert.False(value.Equals(newValue));
-            Assert.Equal(value.Value, newValue.Value);
+                        value.Value = "another value";
 
-            value.Value = "another value";
-
-            Assert.NotEqual(value.Value, newValue.Value);
+                        Assert.NotEqual(value.Value, _.Value);
+                    }, 
+                    empty: () => throw new Exception("It should not run this block")
+                );
         }
 
          [Fact]
@@ -27,14 +32,19 @@ namespace Pandemonium.Test.Extensions.Object
         {
             IEnumerable<Sample> value = new Sample() { Value = "value" }.ToList();
 
-            IEnumerable<Sample> copy = value.Clone();
+            value
+                .Clone()
+                .Match(
+                    value: _ => {
+                        Assert.False(value.Equals(_));
+                        Assert.Equal(value.First().Value, _.First().Value);
 
-            Assert.False(value.Equals(copy));
-            Assert.Equal(value.First().Value, copy.First().Value);
+                        value.First().Value = "another value";
 
-            value.First().Value = "another value";
-
-            Assert.NotEqual(value.First().Value, copy.First().Value);
+                        Assert.NotEqual(value.First().Value, _.First().Value);
+                    }, 
+                    empty: () => throw new Exception("It should not run this block")
+                );
         }
 
         [Fact]
@@ -42,10 +52,15 @@ namespace Pandemonium.Test.Extensions.Object
         {
             int[] value = { 1, 2, 3 };
 
-            int[] copy = value.Clone<int[]>();
-
-            Assert.False(value.Equals(copy));
-            Assert.Equal(value.First(), copy.First());
+            value
+                .Clone<int[]>()
+                .Match(
+                value: _ => {
+                    Assert.False(value.Equals(_));
+                    Assert.Equal(value.First(), _.First());
+                }, 
+                empty: () => throw new Exception("It should not run this block")
+            );
         }
     }
 

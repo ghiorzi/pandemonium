@@ -19,6 +19,19 @@ namespace Pandemonium.Test.Extensions.Boolean
         }
 
         [Fact]
+        public void Should_Run_The_Function_Given_False_Value()
+        {
+            Func<int> function = () => 10;
+
+            false
+                .Otherwise(function)
+                .Match(
+                    value: _ => Assert.Equal(10, _),
+                    empty: () => throw new Exception("It should not run this block")
+                );
+        }
+
+        [Fact]
         public void Should_Not_Run_The_Action_Given_True_Value()
         {
             bool result = false;
@@ -28,6 +41,19 @@ namespace Pandemonium.Test.Extensions.Boolean
             true.Otherwise(action);
 
             Assert.False(result);
+        }
+            
+        [Fact]
+        public void Should_Not_Run_The_Function_Given_True_Value()
+        {
+            Func<int> function = () => 10;
+
+            true
+                .Otherwise(function)
+                .Match(
+                    value: _ => throw new Exception("It should not run this block"),
+                    empty: () => Assert.True(true)
+                );
         }
     }
 }

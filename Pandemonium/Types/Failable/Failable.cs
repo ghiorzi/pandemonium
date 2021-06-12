@@ -24,12 +24,5 @@ namespace Pandemonium.Types
             _value = value;
             Failed = false;
         }
-
-        #region Overrides
-        public override string? ToString()
-            => Succeeded
-                ? _value?.ToString()
-                : _error?.ToString();
-        #endregion
     }
 }

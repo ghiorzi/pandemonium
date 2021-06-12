@@ -16,10 +16,5 @@ namespace Pandemonium.Types
 
             return Nothing.Of();
         }
-
-        public TResult Match<TResult>(Func<T, TResult> success, Func<Exception, TResult> failure)
-            => Succeeded
-                ? success(_value) 
-                : failure(_error);
     }
 }

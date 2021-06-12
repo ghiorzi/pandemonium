@@ -9,7 +9,7 @@ namespace Pandemonium.Types
 
         public static Failable<string> From(string value, Exception error)
         {
-            if(value.Any())
+            if(value.Empty())
                 return error;
             
             return value;

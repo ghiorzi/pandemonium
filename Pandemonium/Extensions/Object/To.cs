@@ -1,20 +1,23 @@
 using System;
+using Pandemonium.Types;
 
 namespace Pandemonium
 {
     public static partial class Functions
     {
-        public static T? To<T>(this object self)
+        # pragma warning disable CS0168
+        public static Maybe<T> To<T>(this object self)
         {
             if (self is not null)
             {
-                Type target = typeof(T);
-
-                if (self.GetType() == target)
-                    return (T)self;
+                try {
+                    return (T) self;
+                } catch (Exception _) {
+                    return default;
+                }
             }
 
-            return (T?) self;
+            return default;
         }
     }
 }

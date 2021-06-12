@@ -23,6 +23,21 @@ namespace Pandemonium.Test.Types.FailableTest
         }
 
         [Fact]
+        public void Should_Not_Select_From_Exception() 
+        {
+            Failable<bool> input = Failable.FromException<bool>(new Exception("It should not create a value"));
+
+            Failable<bool> value = 
+                input
+                    .Select();
+                    
+            value.Match(
+                success: (value) => throw new Exception("Test has failed. It should not run the select function"),
+                failure: (error) => Assert.Equal("It should not create a value", error.Message)
+            );
+        }
+
+        [Fact]
         public void Should_Not_Select_Given_Invalid_Input() 
         {
             Failable<bool> input = false;
