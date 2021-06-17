@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Xunit;
 
-namespace Pandemonium.Test.Extensions.Object
+namespace Pandemonium.Test.Extensions.t
 {
     public class CloneTest
     {

@@ -2,7 +2,7 @@ using Xunit;
 using System;
 using Pandemonium;
 
-namespace Pandemonium.Test.Extensions.Object
+namespace Pandemonium.Test.Extensions.T
 {
     public class NullableTest
     {

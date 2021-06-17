@@ -3,7 +3,7 @@ using Pandemonium;
 using System.Collections;
 using System.Linq;
 
-namespace Pandemonium.Test.Extensions.Object
+namespace Pandemonium.Test.Extensions.T
 {
     public class ToListTest
     {
