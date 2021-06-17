@@ -2,7 +2,7 @@ using System;
 
 namespace Pandemonium
 {
-    public static partial class Functions
+    public static partial class Extensions
     {
         /// <summary>
         /// Indicates whether the specified Unicode character is categorized as white space

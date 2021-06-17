@@ -3,7 +3,7 @@ using Pandemonium.Types;
 
 namespace Pandemonium
 {
-    public static partial class Functions
+    public static partial class Extensions
     {
         #pragma warning disable CS8604
         public static Maybe<T> Clone<T>(this T self)

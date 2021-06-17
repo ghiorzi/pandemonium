@@ -2,7 +2,7 @@ using System;
 
 namespace Pandemonium
 {
-    public static partial class Functions
+    public static partial class Extensions
     {
         public static bool Any(this string self) 
             => string.IsNullOrEmpty(self) is false;

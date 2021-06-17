@@ -1,6 +1,6 @@
 namespace Pandemonium
 {
-    public static partial class Functions
+    public static partial class Extensions
     {
         /// <summary>
         /// It returns true if value is a positive number

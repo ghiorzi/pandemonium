@@ -1,6 +1,6 @@
 namespace Pandemonium
 {
-    public static partial class Functions
+    public static partial class Extensions
     {
         public static bool LessThan(this sbyte self, sbyte number) 
             => self < number;

@@ -1,6 +1,6 @@
 namespace Pandemonium
 {
-    public static partial class Functions
+    public static partial class Extensions
     {
         public static bool EqualTo(this sbyte self, sbyte number) 
             => self == number;
