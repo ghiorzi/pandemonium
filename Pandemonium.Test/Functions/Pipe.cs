@@ -2,7 +2,7 @@ using Xunit;
 using System;
 using static Pandemonium.Functions.Pipeable;
 
-namespace Pandemonium.Test.Functions.Pipe
+namespace Pandemonium.Test.Functions
 {
     public class PipeTest
     {

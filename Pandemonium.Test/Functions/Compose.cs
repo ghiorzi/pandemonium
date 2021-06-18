@@ -2,7 +2,7 @@ using Xunit;
 using System;
 using static Pandemonium.Functions.Composable;
 
-namespace Pandemonium.Test.Functions.ComposeTest
+namespace Pandemonium.Test.Functions
 {
     public class ComposeTest
     {

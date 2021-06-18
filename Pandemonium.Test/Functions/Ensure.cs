@@ -6,14 +6,10 @@ using Pandemonium.Types;
 using static Pandemonium.Functions.Composable;
 using static Pandemonium.Functions.Ensureable;
 
-namespace Pandemonium.Test.Functions.EnsureTest
+namespace Pandemonium.Test.Functions
 {
     public class EnsureTest
     {
-        private readonly Func<int, Task<bool>> _even = async x => await Task.FromResult(x % 2 == 0);
-        private readonly Func<int, Task<bool>> _lessThan10 = async x => await Task.FromResult(x < 10);
-        private readonly Func<int, Task<bool>> _greaterThan5 = async x => await Task.FromResult(x > 5);
-
         [Fact]
         public void Should_Be_A_Tautology()
         {
