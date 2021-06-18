@@ -4,7 +4,7 @@ using static Pandemonium.Functions.Composable;
 
 namespace Pandemonium.Test.Functions.ComposeTest
 {
-    public class ThenTest
+    public class ComposeTest
     {
         [Fact]
         public void Should_Compose_Functions()

@@ -4,7 +4,7 @@ using static Pandemonium.Functions.Pipeable;
 
 namespace Pandemonium.Test.Functions.Pipe
 {
-    public class ThenTest
+    public class PipeTest
     {
         [Fact]
         public void Should_Compose_Functions()

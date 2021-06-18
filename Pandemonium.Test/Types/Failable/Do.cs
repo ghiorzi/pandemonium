@@ -4,7 +4,7 @@ using System;
 
 namespace Pandemonium.Test.Types.FailableTest
 {
-    public class ThenTest
+    public class DoTest
     {
         [Fact]
         public void Should_Do()
