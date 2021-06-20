@@ -4,20 +4,20 @@ using System.Threading.Tasks;
 using Pandemonium.Types;
 
 using static Pandemonium.Functions.Composable;
-using static Pandemonium.Functions.Ensureable;
+using static Pandemonium.Functions.Whereable;
 
 namespace Pandemonium.Test.Functions
 {
-    public class EnsureTest
+    public class WhereTest
     {
         [Fact]
         public void Should_Be_A_Tautology()
         {
             var function =
                 Compose(
-                    Ensure<int>(x => x % 2 == 0),
-                    Ensure<int>(x => x < 10),
-                    Ensure<int>(x => x > 5)
+                    Where<int>(x => x % 2 == 0),
+                    Where<int>(x => x < 10),
+                    Where<int>(x => x > 5)
                 );
 
             var value = function(8);
@@ -30,9 +30,9 @@ namespace Pandemonium.Test.Functions
         {
             var function =
                 Compose(
-                    Ensure<int>(x => x % 2 == 0),
-                    Ensure<int>(x => x < 10),
-                    Ensure<int>(x => x > 5)
+                    Where<int>(x => x % 2 == 0, new Exception("Number must be even")),
+                    Where<int>(x => x < 10),
+                    Where<int>(x => x > 5)
                 );
 
             var value = function(7);

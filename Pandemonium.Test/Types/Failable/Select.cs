@@ -13,7 +13,7 @@ namespace Pandemonium.Test.Types.FailableTest
 
             Failable<string> value = 
                 input
-                    .Ensure(x => x == true, new Exception("Value must be true"))
+                    .Where(x => x == true, new Exception("Value must be true"))
                     .Select((value) => "Value is true");
                     
             value.Match(
@@ -44,7 +44,7 @@ namespace Pandemonium.Test.Types.FailableTest
 
             Failable<string> value = 
                 input
-                    .Ensure(x => x == true, new Exception("Value must be true"))
+                    .Where(x => x == true, new Exception("Value must be true"))
                     .Select((value) => "Value is true");
                     
             value.Match(

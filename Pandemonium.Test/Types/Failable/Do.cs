@@ -13,12 +13,12 @@ namespace Pandemonium.Test.Types.FailableTest
 
             _ =
                 input
-                    .Ensure(x => x < 20, new Exception("Value must be less than 20"))
+                    .Where(x => x < 20, new Exception("Value must be less than 20"))
                     .Do(() => Assert.True(true));
 
             _ =
                 input
-                    .Ensure(x => x < 20, new Exception("Value must be less than 20"))
+                    .Where(x => x < 20, new Exception("Value must be less than 20"))
                     .Do((x) => Assert.True(x == 10));
         }
 
@@ -29,12 +29,12 @@ namespace Pandemonium.Test.Types.FailableTest
 
             _ =
                 input
-                    .Ensure(x => x < 20, new Exception("Value must be less than 20"))
+                    .Where(x => x < 20, new Exception("Value must be less than 20"))
                     .Do(() => throw new Exception("Test has failed. It should not run this function"));
 
             _ =
                 input
-                    .Ensure(x => x < 20, new Exception("Value must be less than 20"))
+                    .Where(x => x < 20, new Exception("Value must be less than 20"))
                     .Do(() => throw new Exception("Test has failed. It should not run this function"));
         }
 

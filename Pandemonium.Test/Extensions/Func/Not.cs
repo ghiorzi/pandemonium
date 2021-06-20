@@ -2,7 +2,7 @@ using Xunit;
 using Pandemonium;
 using System;
 
-namespace Pandemonium.Test.Extensions.Func
+namespace Pandemonium.Test.Extensions.T
 {
     public class NotTest
     {

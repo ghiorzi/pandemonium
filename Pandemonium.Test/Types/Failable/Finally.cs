@@ -15,7 +15,7 @@ namespace Pandemonium.Test.Types.FailableTest
 
             bool _ = 
                 input
-                    .Ensure(x => x == true, new Exception("Value must be true"))
+                    .Where(x => x == true, new Exception("Value must be true"))
                     .Finally((x) => true);
                     
             Assert.True(_);
