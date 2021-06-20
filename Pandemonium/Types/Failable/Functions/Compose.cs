@@ -1,15 +1,13 @@
 using System;
-using static Pandemonium.Functions.Composable;
+using Pandemonium.Types;
+using Pandemonium.Functions;
 
-namespace Pandemonium.Types
+namespace Pandemonium
 {
-    public partial struct Failable<T>
+    public static partial class Extensions
     {
-        public Func<Failable<T>> Compose(params Func<Failable<T>, Failable<T>>[] functions)
-        {
-            var self = this;
-
-            return () => Compose<Failable<T>>(functions)(self);
-        }
+        public static Func<Failable<T>> Compose<T>(this Failable<T> self, params Func<Failable<T>, Failable<T>>[] functions)
+            => ()
+                => Composable.Compose<Failable<T>>(functions)(self);
     }
 }
