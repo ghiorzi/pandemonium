@@ -1,6 +1,5 @@
 using Xunit;
 using System;
-using System.Threading.Tasks;
 using Pandemonium.Types;
 
 using static Pandemonium.Functions.Composable;
@@ -18,14 +17,14 @@ namespace Pandemonium.Test.Functions
                 Compose(
                     Do<double>(x => {}),
                     Do<double>(() => {}),
-                    Do<double>(x => Failable.From(x * x))
+                    Do<double>(x => Assert.Equal(100, x * x))
                 );
 
             var value = function(10);
 
             value
                 .Match(
-                     _ => Assert.Equal(100, _),
+                     _ => Assert.True(true),
                     (_) => throw new Exception("It should not run this block")
                 );
         }

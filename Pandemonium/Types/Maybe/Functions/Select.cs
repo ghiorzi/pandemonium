@@ -12,7 +12,7 @@ namespace Pandemonium.Types
             if (Empty)
                 return Failable.FromException<TResult>(error);
 
-            return Failable.From(selector(_value));
+            return Failable.From(selector(Value));
         }
     }
 }

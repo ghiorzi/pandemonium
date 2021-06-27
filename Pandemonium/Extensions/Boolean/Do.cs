@@ -12,6 +12,7 @@ namespace Pandemonium
 
             return self;
         }
+        
         public static Maybe<T> Do<T>(this bool self, Func<T> function)
         {
             if (self)

@@ -7,12 +7,11 @@ namespace Pandemonium.Types
     {
         public Nothing Match(Action<T> success, Action<Exception> failure)
         {
-            var self = this;
-
-            Succeeded
-                #pragma warning disable CS8604
-                .Do(() => success(self._value))
-                .Otherwise(() => failure(self._error));
+            #pragma warning disable CS8604
+            if (Succeeded)
+                success(Value);
+            else
+                failure(Error);
 
             return Nothing.Of();
         }

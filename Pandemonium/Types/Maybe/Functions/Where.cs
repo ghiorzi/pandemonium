@@ -11,10 +11,10 @@ namespace Pandemonium.Types
         {
             if (Empty)
                 return Failable.FromException<T>(new WhereException());
-            else if (predicate(_value) is false)
+            else if (predicate(Value) is false)
                 return Failable.FromException<T>(error);
 
-            return Failable.From(_value);
+            return Failable.From(Value);
         }
     }
 }

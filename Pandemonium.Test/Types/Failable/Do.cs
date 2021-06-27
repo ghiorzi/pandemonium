@@ -1,4 +1,5 @@
 using Xunit;
+using Pandemonium;
 using Pandemonium.Types;
 using System;
 
@@ -45,9 +46,8 @@ namespace Pandemonium.Test.Types.FailableTest
 
             Failable<bool> value =
                 input
-                    .Do<bool>((_) => _)
-                    .Do<bool>((_) => _)
-                    .Do<bool>((_) => _);
+                    .Do((_) => {})
+                    .Select();
 
             value.Match(
                 success: (_) => Assert.True(true),
@@ -62,13 +62,13 @@ namespace Pandemonium.Test.Types.FailableTest
 
             Failable<bool> value =
                 input
-                    .Do<bool>((_) => false)
-                    .Do<bool>((_) => new Exception("Do not run the next action"))
-                    .Do<bool>((_) => true);
+                    .Do((_) => {})
+                    .Do((_) => Assert.False(_))
+                    .Select();
 
             value.Match(
-                success: (_) => throw new Exception("Test has failed. It should not do the last action"),
-                failure: (error) => Assert.Equal("Do not run the next action", error.Message)
+                success: (_) => Assert.False(_),
+                failure: (error) => throw new Exception("It should not run this block")
             );
         }
     }

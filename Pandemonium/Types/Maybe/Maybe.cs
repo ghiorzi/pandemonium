@@ -13,12 +13,12 @@ namespace Pandemonium.Types
     [Serializable]
     public partial struct Maybe<T>
     {
-        public bool HasValue => _value.NotDefault();
+        public bool HasValue => Value.NotDefault();
         public bool Empty => !HasValue;
 
-        private readonly T _value;
+        private readonly T Value;
 
         internal Maybe(T value)
-            => _value = value;
+            => Value = value;
     }
 }

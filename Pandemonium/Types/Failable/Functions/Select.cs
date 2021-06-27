@@ -8,18 +8,18 @@ namespace Pandemonium.Types
         {
             if (Failed)
                 #pragma warning disable CS8604
-                return Failable.FromException<T>(_error);
+                return Failable.FromException<T>(Error);
             
-            return _value;
+            return Value;
         }
 
         public Failable<TResult> Select<TResult>(Func<T, TResult> selector)
         {
             if (Failed)
                 #pragma warning disable CS8604
-                return Failable.FromException<TResult>(_error);
+                return Failable.FromException<TResult>(Error);
             
-            return Failable.From(selector(_value));
+            return Failable.From(selector(Value));
         }
     }
 }

@@ -9,7 +9,7 @@ namespace Pandemonium.Types
 
             // If it's not empty, then it must has value
             #pragma warning disable CS8602, CS8603
-            return _value.ToString();
+            return Value.ToString();
         }
     }
 }

@@ -2,26 +2,25 @@ using System;
 
 namespace Pandemonium.Types
 {
-    [Serializable]
     public partial struct Failable<T>
     {
         public bool Failed { get; private set; }
         public bool Succeeded => !Failed;
 
-        private readonly T? _value;
-        private readonly Exception? _error;
+        internal readonly T? Value;
+        internal readonly Exception? Error;
 
         internal Failable(Exception error)
         {
-            _error = error;
-            _value = default;
+            Error = error;
+            Value = default;
             Failed = true;
         }
 
         internal Failable(T value)
         {
-            _error = default;
-            _value = value;
+            Error = default;
+            Value = value;
             Failed = false;
         }
     }
