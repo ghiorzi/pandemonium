@@ -2,7 +2,7 @@ using System;
 using Xunit;
 using Pandemonium;
 
-namespace Pandemonium.Test.Extensions.Strings
+namespace Pandemonium.Test.Functions.Strings
 {
     public class AnyTest
     {

@@ -2,7 +2,7 @@ using System.Collections.Generic;
 
 namespace Pandemonium
 {
-    public static partial class Extensions
+    public static partial class Functions
     {
         public static TValue Upsert<TKey, TValue>(this IDictionary<TKey, TValue> self, TKey key, TValue value)
         {

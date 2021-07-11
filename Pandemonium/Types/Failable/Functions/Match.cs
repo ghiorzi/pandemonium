@@ -9,9 +9,9 @@ namespace Pandemonium.Types
         {
             #pragma warning disable CS8604
             if (Succeeded)
-                success(Value);
+                success(_value);
             else
-                failure(Error);
+                failure(_error);
 
             return Nothing.Of();
         }

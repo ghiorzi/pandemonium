@@ -2,7 +2,7 @@ using Xunit;
 using Pandemonium.Types;
 using System;
 
-namespace Pandemonium.Test.Extensions.Number
+namespace Pandemonium.Test.Functions.Number
 {
     public class WhereTest
     {

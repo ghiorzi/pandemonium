@@ -1,9 +1,9 @@
 using System;
 using System.Linq;
 
-namespace Pandemonium.Functions
+namespace Pandemonium
 {
-    public static class Pipeable
+    public static partial class Functions
     {
         public static Func<T, T> Pipe<T>(params Func<T, T>[] functions)
             => (T value)

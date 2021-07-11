@@ -2,7 +2,7 @@ using Xunit;
 using Pandemonium;
 using System.Collections.Generic;
 
-namespace Pandemonium.Test.Extensions.IDictionary
+namespace Pandemonium.Test.Functions.IDictionary
 {
     public class UpsertTest
     {

@@ -1,8 +1,8 @@
 using Xunit;
 using System;
 using Pandemonium.Types;
-using static Pandemonium.Functions.Composable;
-using static Pandemonium.Functions.Whereable;
+
+using static Pandemonium.Functions;
 
 namespace Pandemonium.Test.Types.FailableTest
 {

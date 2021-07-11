@@ -1,11 +1,9 @@
 using Xunit;
 using System;
 using Pandemonium.Types;
+using static Pandemonium.Functions;
 
-using static Pandemonium.Functions.Composable;
-using static Pandemonium.Functions.Doable;
-
-namespace Pandemonium.Test.Functions
+namespace Pandemonium.Test.FunctionsTest
 {
     public class DoTest
     {

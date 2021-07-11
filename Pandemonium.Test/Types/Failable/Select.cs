@@ -2,6 +2,8 @@ using Xunit;
 using Pandemonium.Types;
 using System;
 
+using static Pandemonium.Functions;
+
 namespace Pandemonium.Test.Types.FailableTest
 {
     public class SelectTest
@@ -13,7 +15,9 @@ namespace Pandemonium.Test.Types.FailableTest
 
             Failable<string> value = 
                 input
-                    .Where(x => x == true, new Exception("Value must be true"))
+                    .Pipe(
+                        Where<bool>(x => x, new Exception("Value must be true"))
+                    )
                     .Select((value) => "Value is true");
                     
             value.Match(
@@ -44,7 +48,9 @@ namespace Pandemonium.Test.Types.FailableTest
 
             Failable<string> value = 
                 input
-                    .Where(x => x == true, new Exception("Value must be true"))
+                    .Pipe(
+                        Where<bool>(x => x, new Exception("Value must be true"))
+                    )
                     .Select((value) => "Value is true");
                     
             value.Match(

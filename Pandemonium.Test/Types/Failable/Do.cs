@@ -1,6 +1,7 @@
 using Xunit;
 using Pandemonium;
 using Pandemonium.Types;
+using static Pandemonium.Functions;
 using System;
 
 namespace Pandemonium.Test.Types.FailableTest
@@ -14,13 +15,17 @@ namespace Pandemonium.Test.Types.FailableTest
 
             _ =
                 input
-                    .Where(x => x < 20, new Exception("Value must be less than 20"))
-                    .Do(() => Assert.True(true));
+                    .Pipe(
+                        Where<int>(x => x < 20, new Exception("Value must be less than 20")),
+                        Do<int>(() => Assert.True(true))
+                    );
 
             _ =
                 input
-                    .Where(x => x < 20, new Exception("Value must be less than 20"))
-                    .Do((x) => Assert.True(x == 10));
+                    .Pipe(
+                        Where<int>(x => x < 20, new Exception("Value must be less than 20")),
+                        Do<int>((x) => Assert.True(x ==  10))
+                    );
         }
 
         [Fact]
@@ -30,13 +35,17 @@ namespace Pandemonium.Test.Types.FailableTest
 
             _ =
                 input
-                    .Where(x => x < 20, new Exception("Value must be less than 20"))
-                    .Do(() => throw new Exception("Test has failed. It should not run this function"));
+                    .Pipe(
+                        Where<int>(x => x < 20, new Exception("Value must be less than 20")),
+                        Do<int>(() => throw new Exception("Test has failed. It should not run this function"))
+                    );
 
             _ =
                 input
-                    .Where(x => x < 20, new Exception("Value must be less than 20"))
-                    .Do(() => throw new Exception("Test has failed. It should not run this function"));
+                    .Pipe(
+                        Where<int>(x => x < 20, new Exception("Value must be less than 20")),
+                        Do<int>(() => throw new Exception("Test has failed. It should not run this function"))
+                    );
         }
 
         [Fact]
@@ -46,7 +55,9 @@ namespace Pandemonium.Test.Types.FailableTest
 
             Failable<bool> value =
                 input
-                    .Do((_) => {})
+                    .Pipe(
+                        Do<bool>((_) => {})
+                    )
                     .Select();
 
             value.Match(
@@ -62,8 +73,10 @@ namespace Pandemonium.Test.Types.FailableTest
 
             Failable<bool> value =
                 input
-                    .Do((_) => {})
-                    .Do((_) => Assert.False(_))
+                    .Pipe(
+                        Do<bool>((_) => {}),
+                        Do<bool>((_) => Assert.False(_))
+                    )
                     .Select();
 
             value.Match(

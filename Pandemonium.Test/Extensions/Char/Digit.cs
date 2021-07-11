@@ -1,7 +1,7 @@
 ﻿using Xunit;
 using Pandemonium;
 
-namespace Pandemonium.Test.Extensions.Char
+namespace Pandemonium.Test.Functions.Char
 {
     public class DigitTest
     {

@@ -1,6 +1,6 @@
 namespace Pandemonium
 {
-    public static partial class Extensions
+    public static partial class Functions
     {
         #pragma warning disable IDE0060
         public static bool NotNullable<T>(this T _) 

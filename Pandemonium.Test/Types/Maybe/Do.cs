@@ -2,6 +2,8 @@ using Xunit;
 using Pandemonium.Types;
 using System;
 
+using static Pandemonium.Functions;
+
 namespace Pandemonium.Test.Types.MaybeTest
 {
     public class DoTest
@@ -10,55 +12,67 @@ namespace Pandemonium.Test.Types.MaybeTest
         public void Should_Run_Success_Given_A_Value()
         {
             Maybe<string> maybe = "value";
-
+ 
             _ =
                 maybe
-                    .Do((value) => Failable.From(value))
+                    .ToFailable()
+                    .Pipe(
+                        Do<string>((value) => Failable.From(value))
+                    )
                     .Match(
                         success: (value) => Assert.True(true), // pass
-                        failure: (error) => throw error // fail
+                        failure: (_) => throw new Exception("It should not run this block") // fail
                     );
         }
 
         [Fact]
-        public void Should_Run_Success_Given_A_Value_With_Error_Provided() 
+        public void Should_Run_Success_Given_A_Value_With_Action_Without_Argument() 
         {
             Maybe<string> maybe = "value";
 
             _ =
                 maybe
-                    .Do((value) => Failable.From(value), new Exception("Maybe must have a value"))
+                    .ToFailable()
+                    .Pipe(
+                        Do<string>(() => {})
+                    )
                     .Match(
                         success: (value) => Assert.True(true), // pass
-                        failure: (error) => throw error // fail
+                        failure: (_) => throw new Exception("It should not run this block") // fail
                     );
         }
 
         [Fact]
-        public void Should_Run_Failure_Given_Null()
+        public void Should_Run_Empty_Given_Null()
         {
             Maybe<string> maybe = null;
 
             _ =
                 maybe
-                    .Do((value) => Failable.From(value))
+                    .ToFailable()
+                    .Pipe(
+                        Do<string>((value) => {})
+                    )
                     .Match(
                         success: (value) => throw new Exception("Test has failed. It should run failure"), // fail 
-                        failure: (error) => Assert.Equal("Do has failed to result a value", error.Message) // pass
+                        failure: (_) => Assert.True(true) // pass
                     );
         }
 
         [Fact]
-        public void Should_Run_Failure_Given_Null_With_Error_Provided() 
+        public void Should_Run_Empty_Given_Null_With_Aciton_Wihout_Argument() 
         {
             Maybe<string> maybe = null;
 
             _ =
                 maybe
-                    .Do((value) => Failable.From(value), new Exception("Maybe must have a value"))
+                    .ToFailable()
+                    .Pipe(
+                        Do<string>(() => {})
+                    )
                     .Match(
                         success: (value) => throw new Exception("Test has failed. It should run failure"), // fail 
-                        failure: (error) => Assert.Equal("Maybe must have a value", error.Message) // pass
+                        failure: (_) => Assert.True(true) // pass
                     );
         }
     }

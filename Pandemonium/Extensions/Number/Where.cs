@@ -3,7 +3,7 @@ using Pandemonium.Types;
 
 namespace Pandemonium
 {
-    public static partial class Extensions
+    public static partial class Functions
     {
         public static Failable<sbyte> Where(this sbyte self, Func<sbyte, bool> predicate)
             => Where(self, predicate, new WhereException());

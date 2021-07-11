@@ -1,12 +1,10 @@
 using Xunit;
 using System;
-using System.Threading.Tasks;
 using Pandemonium.Types;
 
-using static Pandemonium.Functions.Composable;
-using static Pandemonium.Functions.Whereable;
+using static Pandemonium.Functions;
 
-namespace Pandemonium.Test.Functions
+namespace Pandemonium.Test.FunctionsTest
 {
     public class WhereTest
     {

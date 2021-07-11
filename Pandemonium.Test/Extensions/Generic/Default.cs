@@ -1,7 +1,7 @@
 using Xunit;
 using Pandemonium;
 
-namespace Pandemonium.Test.Extensions.T
+namespace Pandemonium.Test.Functions.T
 {
     public class DefaultTest
     {

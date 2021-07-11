@@ -3,7 +3,7 @@ using Pandemonium.Types;
 
 namespace Pandemonium
 {
-    public static partial class Extensions
+    public static partial class Functions
     {
 
         public static Nothing Otherwise(this bool self, Action action)

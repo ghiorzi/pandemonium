@@ -1,7 +1,7 @@
 using Xunit;
 using Pandemonium;
 
-namespace Pandemonium.Test.Extensions.Number
+namespace Pandemonium.Test.Functions.Number
 {
     public class NotEqualToTest
     {

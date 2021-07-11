@@ -7,21 +7,21 @@ namespace Pandemonium.Types
         public bool Failed { get; private set; }
         public bool Succeeded => !Failed;
 
-        internal readonly T? Value;
-        internal readonly Exception? Error;
+        private readonly T? _value;
+        private readonly Exception _error;
 
         internal Failable(Exception error)
         {
-            Error = error;
-            Value = default;
+            _error = error;
+            _value = default;
             Failed = true;
         }
 
         internal Failable(T value)
         {
-            Error = default;
-            Value = value;
-            Failed = false;
+            _error = new FailableException();
+            _value = value;
+            Failed = value is null;
         }
     }
 }

@@ -3,7 +3,7 @@ using System;
 using System.Globalization;
 using Pandemonium;
 
-namespace Pandemonium.Test.Extensions.Number
+namespace Pandemonium.Test.Functions.Number
 {
     public class MarchTest
     {

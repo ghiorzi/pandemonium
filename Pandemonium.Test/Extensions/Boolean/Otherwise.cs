@@ -2,7 +2,7 @@
 using Pandemonium;
 using System;
 
-namespace Pandemonium.Test.Extensions.Boolean
+namespace Pandemonium.Test.Functions.Boolean
 {
     public class OtherwiseTest
     {

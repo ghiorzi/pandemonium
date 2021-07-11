@@ -2,7 +2,7 @@ using Xunit;
 using Pandemonium;
 using System;
 
-namespace Pandemonium.Test.Extensions.Date
+namespace Pandemonium.Test.Functions.Date
 {
     public class YesterdayTest
     {

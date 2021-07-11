@@ -1,7 +1,7 @@
 using Xunit;
 using System;
 
-namespace Pandemonium.Test.Extensions.Date
+namespace Pandemonium.Test.Functions.Date
 {
     public class BetweenTest
     {

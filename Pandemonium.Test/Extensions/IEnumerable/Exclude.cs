@@ -3,7 +3,7 @@ using Pandemonium;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Pandemonium.Test.Extensions.IEnumerables
+namespace Pandemonium.Test.Functions.IEnumerables
 {
     public class ExcludeTest
     {

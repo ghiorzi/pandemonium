@@ -2,7 +2,7 @@ using System;
 
 namespace Pandemonium
 {
-    public static partial class Extensions
+    public static partial class Functions
     {
         public static Func<TSource, bool> And<TSource>(this Func<TSource, bool> self, params Func<TSource, bool>[] functions) 
         {

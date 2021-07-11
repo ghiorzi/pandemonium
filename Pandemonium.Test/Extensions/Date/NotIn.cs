@@ -3,7 +3,7 @@ using Pandemonium;
 using System;
 using System.Collections.Generic;
 
-namespace Pandemonium.Test.Extensions.Date
+namespace Pandemonium.Test.Functions.Date
 {
     public class NotInTest
     {

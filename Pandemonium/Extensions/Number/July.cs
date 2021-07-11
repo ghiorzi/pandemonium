@@ -3,7 +3,7 @@ using System.Globalization;
 
 namespace Pandemonium
 {
-    public static partial class Extensions
+    public static partial class Functions
     {
         private const sbyte JULY = 7;
 

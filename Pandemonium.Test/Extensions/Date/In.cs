@@ -2,7 +2,7 @@ using Xunit;
 using System;
 using System.Collections.Generic;
 
-namespace Pandemonium.Test.Extensions.Date
+namespace Pandemonium.Test.Functions.Date
 {
     public class InTest
     {

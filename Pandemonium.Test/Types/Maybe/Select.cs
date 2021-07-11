@@ -6,6 +6,20 @@ namespace Pandemonium.Test.Types.MaybeTest
 {
     public class SelectTest
     {
+        
+        [Fact]
+        public void Should_Select_Given_Valid_Input_Without_Selector() 
+        {
+            Maybe<int> input = 1;
+
+            Failable<int> value = input.Select();
+                    
+            value.Match(
+                success: (value) => Assert.Equal(1, value),
+                failure: (error) => throw new Exception("Test has failed. It should run the select function")
+            );
+        }
+
         [Fact]
         public void Should_Select_Given_Valid_Input() 
         {

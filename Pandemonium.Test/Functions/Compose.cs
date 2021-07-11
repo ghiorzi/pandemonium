@@ -1,8 +1,8 @@
 using Xunit;
 using System;
-using static Pandemonium.Functions.Composable;
+using static Pandemonium.Functions;
 
-namespace Pandemonium.Test.Functions
+namespace Pandemonium.Test.FunctionsTest
 {
     public class ComposeTest
     {

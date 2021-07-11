@@ -2,7 +2,7 @@ using Xunit;
 using Pandemonium;
 using System;
 
-namespace Pandemonium.Test.Extensions.T
+namespace Pandemonium.Test.Functions.T
 {
     public class AndTest
     {

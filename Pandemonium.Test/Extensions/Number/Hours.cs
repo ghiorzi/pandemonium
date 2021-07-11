@@ -2,7 +2,7 @@ using Xunit;
 using System;
 using Pandemonium;
 
-namespace Pandemonium.Test.Extensions.Number
+namespace Pandemonium.Test.Functions.Number
 {
     public class HoursTest
     {

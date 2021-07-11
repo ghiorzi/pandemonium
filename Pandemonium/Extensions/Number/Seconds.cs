@@ -2,7 +2,7 @@ using System;
 
 namespace Pandemonium
 {
-    public static partial class Extensions
+    public static partial class Functions
     {
         public static TimeSpan Seconds(this sbyte self) 
             => TimeSpan.FromSeconds(self);

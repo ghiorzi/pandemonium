@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace Pandemonium
 {
-    public static partial class Extensions
+    public static partial class Functions
     {
         public static string Exclude(this string self, Func<char, bool> predicate)
         {

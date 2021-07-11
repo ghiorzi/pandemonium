@@ -1,3 +1,4 @@
+using System;
 using Xunit;
 using Pandemonium.Types;
 
@@ -10,14 +11,11 @@ namespace Pandemonium.Test.Types.MaybeTest
         {
             Maybe<string> maybe = "value";
 
-            bool value =
-                maybe
-                    .Match(
-                        value: (_) => true,
-                        empty: () => false
-                    );
-            
-            Assert.True(value);
+            maybe
+                .Match(
+                    value: (_) => Assert.Equal("value", _),
+                    empty: () => throw new Exception("It should not run this block")
+                );
         }
 
         [Fact]
@@ -37,14 +35,11 @@ namespace Pandemonium.Test.Types.MaybeTest
         {
             Maybe<string> maybe = null;
 
-            bool value = 
-                maybe.
-                    Match(
-                        value: (_) => true,
-                        empty: () => false
-                   );
-            
-            Assert.False(value);
+            maybe
+                .Match(
+                    value: (_) => throw new Exception("It should not run this block"),
+                    empty: () => Assert.True(true)
+                );
         }
 
         [Fact]
