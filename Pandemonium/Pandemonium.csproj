@@ -5,7 +5,7 @@
     <PackageId>Pandemonium</PackageId>
     <PackageIcon>logo_package.png</PackageIcon>
     <Description>Spoil everything from the start</Description>
-    <Version>3.0.0</Version>
+    <Version>3.0.0-beta</Version>
     <Authors>ghiorzi</Authors>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <RepositoryUrl>https://github.com/ghiorzi/pandemonium</RepositoryUrl>
