@@ -5,9 +5,9 @@ namespace Pandemonium
     public static partial class Functions
     {
         /// <summary>
-        /// It returns true if value is not a punctuation, otherwise returns false
+        /// Indicates whether the specified Unicode character is not categorized as a punctuation mark
         /// </summary> 
-        public static bool NotPunctuation(this char @this) 
-            => !Char.IsPunctuation(@this);
+        public static bool NotPunctuation(this char self) 
+            => char.IsPunctuation(self) is false;
     }
 }

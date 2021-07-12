@@ -1,23 +1,23 @@
 using System;
+using Pandemonium.Types;
 
 namespace Pandemonium
 {
     public static partial class Functions
     {
-        /// <summary>
-        /// It casts value to T
-        /// </summary>
-        public static T To<T>(this object @this)
+        # pragma warning disable CS0168
+        public static Maybe<T> To<T>(this object self)
         {
-            if (@this != null)
+            if (self is not null)
             {
-                Type target = typeof(T);
-
-                if (@this.GetType() == target)
-                    return (T)@this;
+                try {
+                    return (T) self;
+                } catch (Exception _) {
+                    return default;
+                }
             }
 
-            return (T)@this;
+            return default;
         }
     }
 }

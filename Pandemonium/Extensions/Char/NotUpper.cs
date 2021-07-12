@@ -5,9 +5,9 @@ namespace Pandemonium
     public static partial class Functions
     {
         /// <summary>
-        /// It returns true if value is not in uppercase, otherwise returns false
+        /// Indicates whether the specified Unicode character is not categorized as an uppercase letter
         /// </summary> 
-        public static bool NotUpper(this char @this) 
-            => !Char.IsUpper(@this);
+        public static bool NotUpper(this char self) 
+            => char.IsUpper(self) is false;
     }
 }

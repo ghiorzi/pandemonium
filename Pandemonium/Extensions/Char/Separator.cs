@@ -5,9 +5,9 @@ namespace Pandemonium
     public static partial class Functions
     {
         /// <summary>
-        /// It returns true if value is a separator, otherwise returns false
+        /// Indicates whether the specified Unicode character is categorized as a separator character
         /// </summary> 
-        public static bool Separator(this char @this) 
-            => Char.IsSeparator(@this);
+        public static bool Separator(this char self) 
+            => char.IsSeparator(self);
     }
 }

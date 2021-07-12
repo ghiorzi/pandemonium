@@ -1,17 +1,9 @@
-using System;
-
 namespace Pandemonium.Types
 {
-    /// <summary>
-    /// Semantic container to represent a value that may or may not exist 
-    /// </summary>
-    [Serializable]
     public partial struct Maybe<T>
     {
-        public static Maybe<T> None => new Maybe<T>();
-
         public bool HasValue => _value.NotDefault();
-        public bool HasNoValue => !HasValue;
+        public bool Empty => !HasValue;
 
         private readonly T _value;
 

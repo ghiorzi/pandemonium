@@ -5,9 +5,9 @@ namespace Pandemonium
     public static partial class Functions
     {
         /// <summary>
-        /// It returns true if value is a letter OR a digit, otherwise returns false
+        /// Indicates whether the specified Unicode character is categorized as a Unicode letter or as a decimal digit
         /// </summary> 
-        public static bool LetterOrDigit(this char @this) 
-            => Char.IsLetter(@this) || Char.IsDigit(@this);
+        public static bool LetterOrDigit(this char self) 
+            => char.IsLetter(self) || char.IsDigit(self);
     }
 }

@@ -62,7 +62,7 @@ text
 
 ```csharp
 // from
-new DateTime(2020, 12, 31);
+new (2020, 12, 31);
 // to
 31.December(2020);
 

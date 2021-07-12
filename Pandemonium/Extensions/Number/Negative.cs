@@ -5,44 +5,44 @@ namespace Pandemonium
         /// <summary>
         /// It returns true if value is a negative number
         /// </summary>
-        public static bool Negative(this sbyte @this) 
-            => @this < 0;
+        public static bool Negative(this sbyte self) 
+            => self < 0;
 
         /// <summary>
         /// It returns true if value is a negative number
         /// </summary>
-        public static bool Negative(this short @this) 
-            => @this < 0;
+        public static bool Negative(this short self) 
+            => self < 0;
 
         /// <summary>
         /// It returns true if value is a negative number
         /// </summary>
-        public static bool Negative(this int @this) 
-            => @this < 0;
+        public static bool Negative(this int self) 
+            => self < 0;
 
         /// <summary>
         /// It returns true if value is a negative number
         /// </summary>
-        public static bool Negative(this long @this) 
-            => @this < 0;
+        public static bool Negative(this long self) 
+            => self < 0;
 
 
         /// <summary>
         /// It returns true if value is a negative number
         /// </summary>
-        public static bool Negative(this float @this) 
-            => @this < 0;
+        public static bool Negative(this float self) 
+            => self < 0;
 
         /// <summary>
         /// It returns true if value is a negative number
         /// </summary>
-        public static bool Negative(this double @this) 
-            => @this < 0;
+        public static bool Negative(this double self) 
+            => self < 0;
 
         /// <summary>
         /// It returns true if value is a negative number
         /// </summary>
-        public static bool Negative(this decimal @this) 
-            => @this < 0;
+        public static bool Negative(this decimal self) 
+            => self < 0;
     }
 }

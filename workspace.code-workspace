@@ -1,0 +1,18 @@
+{
+  "folders": [
+    {
+      "path": "./Pandemonium",
+      "name": "Library"
+    },
+    {
+      "path": "./Pandemonium.Test",
+      "name": "Test"
+    }
+  ],
+  "settings": {
+    "files.exclude": {
+      "**/bin": true, 
+      "**/obj": true,
+    }
+  }
+}

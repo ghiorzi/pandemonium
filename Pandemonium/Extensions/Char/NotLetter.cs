@@ -5,9 +5,9 @@ namespace Pandemonium
     public static partial class Functions
     {
         /// <summary>
-        /// It returns true if value is not a letter, otherwise returns false
+        /// Indicates whether the specified Unicode character is not categorized as a Unicode letter
         /// </summary> 
-        public static bool NotLetter(this char @this) 
-            => !Char.IsLetter(@this);
+        public static bool NotLetter(this char self) 
+            => char.IsLetter(self) is false;
     }
 }

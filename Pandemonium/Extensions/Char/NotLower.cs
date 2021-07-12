@@ -5,9 +5,9 @@ namespace Pandemonium
     public static partial class Functions
     {
         /// <summary>
-        /// It returns true if value is not in lowercase, otherwise returns false
+        /// Indicates whether the specified Unicode character is not categorized as a lowercase letter
         /// </summary> 
-        public static bool NotLower(this char @this) 
-            => !Char.IsLower(@this);
+        public static bool NotLower(this char self) 
+            => char.IsLower(self) is false;
     }
 }

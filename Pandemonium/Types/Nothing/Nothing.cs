@@ -5,16 +5,14 @@ namespace Pandemonium.Types
     /// <summary>
     /// It indicates the absence of a value
     /// </summary>
-    public struct Nothing 
+    public readonly struct Nothing 
     {
         public static Nothing Of()
-            => new Nothing();
+            => new ();
         
-        /// <summary>
-        /// It allows to start a flow
-        /// </summary>
-        /// <param name="function">Function that will be invoked</param>
-        public Flow<T, TError> Then<T, TError>(Func<Flow<T, TError>> function)
+        // It must not be a static method since we want method chaining
+        #pragma warning disable CA1822
+        public Failable<T> Do<T>(Func<Failable<T>> function)
             => function();
     }
 }

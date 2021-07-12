@@ -5,9 +5,9 @@ namespace Pandemonium
     public static partial class Functions
     {
         /// <summary>
-        ///  It returns true if @this is a future date
+        ///  Indicates whether the specified date is a future date
         /// </summary>
-        public static bool Future(this DateTime @this) 
-            => @this > DateTime.Now;
+        public static bool Future(this DateTime self) 
+            => self > DateTime.Now;
     }
 }

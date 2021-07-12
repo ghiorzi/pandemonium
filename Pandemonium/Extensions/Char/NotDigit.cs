@@ -5,9 +5,9 @@ namespace Pandemonium
     public static partial class Functions
     {
         /// <summary>
-        /// It returns true if value is not a digit, otherwise returns false
+        /// Indicates whether the specified Unicode character is not categorized as a decimal digit.
         /// </summary> 
-        public static bool NotDigit(this char @this) 
-            => !Char.IsDigit(@this);
+        public static bool NotDigit(this char self) 
+            => char.IsDigit(self) is false;
     }
 }
