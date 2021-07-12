@@ -25,4 +25,4 @@ jobs:
       run: dotnet build --configuration Release
  
     - name: Publish
-      run: dotnet nuget push "./Pandemonium/bin/Release/Gravatar.3.0.0-beta.nupkg" -k ${{ secrets.NUGET_TOKEN }} -s https://api.nuget.org/v3/index.json
+      run: dotnet nuget push "./Pandemonium/bin/Release/Pandemonium.3.0.0-beta.nupkg" -k ${{ secrets.NUGET_TOKEN }} -s https://api.nuget.org/v3/index.json
