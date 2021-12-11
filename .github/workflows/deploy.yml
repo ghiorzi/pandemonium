@@ -1,0 +1,28 @@
+name: deploy
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  build-and-deploy:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 6.0.x
+
+    - name: Restore dependencies from library
+      working-directory: ./Pandemonium
+      run: dotnet restore
+
+    - name: Build library
+      working-directory: ./Pandemonium
+      run: dotnet build --configuration Release
+ 
+    - name: Publish
+      run: dotnet nuget push "./Pandemonium/bin/Release/Pandemonium.3.0.0.nupkg" -k ${{ secrets.NUGET_TOKEN }} -s https://api.nuget.org/v3/index.json --skip-duplicate
